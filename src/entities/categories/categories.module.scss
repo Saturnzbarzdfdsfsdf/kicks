@@ -1,0 +1,104 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.categories {
+	display: flex;
+	justify-content: flex-end;
+	overflow: hidden;
+	position: relative;
+
+	background-color: v.$color-dark;
+	border-radius: v.$br64;
+	margin-bottom: 120px;
+}
+
+.title2 {
+	@include mixins.title2;
+	padding-top: 90px;
+	padding-bottom: 60px;
+}
+
+.firstThird {
+	overflow: hidden;
+	max-width: 1360px;
+
+	.swiperWrapper {
+		.swiperSlide {
+			position: relative;
+			height: 650px;
+		}
+	}
+}
+
+.slideContent {
+	img {
+		border-radius: v.$br64;
+	}
+
+	&Title {
+		position: absolute;
+		font-size: v.$fs40;
+		bottom: 40px;
+		margin-left: 60px;
+	}
+
+	&Link {
+		display: grid;
+		place-content: center;
+		position: absolute;
+
+		bottom: 30px;
+		right: 100px;
+
+		width: 55px;
+		height: 55px;
+
+		border-radius: v.$br8;
+		background-color: v.$color-dark;
+		transition: v.$transition-base;
+
+		&:hover {
+			background-color: v.$color-ascent-yellow;
+		}
+	}
+}
+
+.swiperSlideBr:first-child {
+	border-top-left-radius: v.$br64;
+	overflow: hidden;
+	transition: all 2s ease;
+}
+
+.swiperNavigation {
+	display: flex;
+	position: absolute;
+	justify-content: end;
+	z-index: 10;
+
+	gap: 15px;
+
+	top: 100px;
+	right: 100px;
+	width: 100%;
+}
+
+.customButtonPrev,
+.customButtonNext {
+	display: grid;
+	place-content: center;
+	cursor: pointer;
+
+	font-size: v.$fs30;
+	border-radius: v.$br8;
+	background-color: v.$color-gray-light;
+	color: v.$color-dark;
+	transition: v.$transition-base;
+	border: none;
+
+	width: 55px;
+	height: 55px;
+
+	&:hover {
+		background-color: v.$color-gray-main;
+	}
+}

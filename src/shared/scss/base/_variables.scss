@@ -1,0 +1,64 @@
+// colors
+$color-ascent-blue: #4A69E2;
+$color-ascent-yellow: #FFA52F;
+
+$color-white-255: #FFFFFF; // Полностью белый
+$color-white-250: #FAFAFA; // Очень светлый серый
+
+$color-gray-light: #E7E7E3; // Светлый серый
+$color-gray-main: #70706E; // Основной серый
+
+$color-dark: #232321; // Темный цвет
+
+
+// sizes
+$max-width: 1440px; // Максимальная ширина страницы
+$min-width: 320px;  // Минимальная ширина страницы
+
+$container-padding: 10px;
+
+$header-width: 1320px; 
+$header-height: 60px; 
+$p15: 15px;
+
+$footer-height: 40px;
+
+
+$hover-bg-color: #f8f9fa;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// border radius 
+$br8: 8px;
+$br14: 14px;
+$br28: 24px;
+$br50: 50%;
+$br64: 64px;
+
+
+// font size
+$fs16: 16px;
+$fs14: 14px;
+$fs20: 20px;
+$fs24: 24px;
+$fs30: 30px;
+$fs40: 40px;
+$fs48: 48px;
+
+
+// line height
+$lh22: 22px;
+$lh28: 28px;
+$lh57: 57px;
+
+// font family 
+$ffRubik: 'Rubik', sans-serif;
+$ffOpenSans: 'Open Sans', sans-serif;
+
+// transition 
+$transition-base: all .3s ease;
+
+
+// header__actions
+$w37: 37px;
+$h37: 37px;

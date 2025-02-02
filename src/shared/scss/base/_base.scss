@@ -1,0 +1,11 @@
+@use '../base/variables' as v;
+@use '../base/mixins';
+
+.title-card {
+color: v.$color-dark;
+font-family: v.$ffRubik;
+font-size: v.$fs24;
+font-weight: 600;
+line-height: 28px;
+}
+

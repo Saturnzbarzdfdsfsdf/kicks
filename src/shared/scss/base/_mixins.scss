@@ -1,0 +1,34 @@
+@use '../base/variables' as v;
+
+@mixin btn-main($padding: 12px 42px, $color: v.$color-ascent-blue) {
+	font-size: v.$fs14;
+	font-family: v.$ffRubik;
+	font-weight: 500;
+	
+	color: v.$color-white-255;
+	background-color: $color;
+
+	padding: $padding;
+	border-radius: v.$br8;
+	transition: v.$transition-base;
+
+	line-height: 17px;
+	letter-spacing: 0.25px;
+
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+@mixin title2($color: v.$color-white-255) {
+	font-family: v.$ffRubik;
+	color: $color;
+	font-size: 74px;
+	font-weight: 600;
+	line-height: 95%;
+
+	text-align: left;
+	text-transform: uppercase;
+}

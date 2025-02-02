@@ -1,0 +1,186 @@
+@use '../../scss/base/variables' as v;
+
+.header {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: v.$header-width;
+        border-radius: v.$br28;
+        background-color: v.$color-white-255;
+        padding: v.$p15;
+    }
+
+    &__logo {
+        padding-right: 150px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: v.$color-ascent-yellow;
+        width: v.$w37;
+        height: v.$h37;
+        border-radius: v.$br50;
+
+        p {
+            font-weight: 600;
+            font-family: v.$ffOpenSans;
+        }
+    }
+
+    &__user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        width: v.$w37;
+        height: v.$h37;
+        margin-right: 10px;
+        border-radius: v.$br50;
+        transition: v.$transition-base;
+
+        &:hover {
+            background-color: v.$color-ascent-yellow;
+        }
+    }
+}
+
+.header__nav {
+    background-color: v.$color-white-255;
+    padding: 10px;
+
+    .navList {
+        display: flex;
+        gap: 20px;
+
+        .navItem {
+            position: relative;
+
+            a {
+                display: block;
+                text-decoration: none;
+                font-weight: 600;
+                padding: 10px 15px;
+                border-radius: v.$br8;
+                color: v.$color-dark;
+                transition: v.$transition-base;
+
+                &:hover {
+                    border-radius: v.$br14;
+                    background-color: v.$color-gray-light;
+                }
+            }
+
+            &.dropdown {
+                .dropdownToggle {
+                    transition: v.$transition-base;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background-image: url('../assets/icon/caret_down.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 10px;
+                        height: 5px;
+                        top: 50%;
+                        right: 3px;
+                        transform: translateY(-50%);
+                        transition: v.$transition-base;
+                    }
+
+                    &:hover::after {
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+
+                .dropdownMenu {
+                    transition: v.$transition-base;
+                    display:none;
+                    position:absolute;
+                    z-index :10;
+                    list-style:none;
+
+                    top :100%;
+                    left :0;
+                    padding :10px 0;
+                    min-width :150px;
+
+                    background-color :v.$color-white-250;
+                    box-shadow :v.$shadow;
+                    border-radius:v.$br28;
+
+                    .dropdownItem a {
+                        display:block;
+                        padding :8px 15px;
+                        color:v.$color-dark;
+
+                        &:hover {
+                            background-color:v.$color-gray-light;
+                        }
+                    }
+                }
+
+                &:hover .dropdownMenu {
+                    display:block;
+                }
+            }
+        }
+    }
+}
+
+.header__search {
+    position :relative;
+    display:inline-block;
+
+    input[type='text'] {
+        position:absolute;
+        z-index :1;
+        border:none;
+        outline:none;
+
+        width :40px;
+        padding :10px 40px 10px 10px;
+        border-radius :20px;
+        transition :width 0.6s ease, padding 0.3s ease;
+        font-size :16px;
+        right :15px;
+        top :-3px;
+    }
+
+    button[type='submit'] {
+         cursor:pointer;
+         position :relative;
+         z-index :2;
+         background:none;
+         border:none;
+         padding :5px;
+         font-size :16px;
+         color:v.$color-dark;
+         right :20px;
+         top :50%;
+         transition:v.$transition-base;
+         border-radius:v.$br50;
+
+         &:hover {
+             background-color:v.$color-ascent-yellow;
+         }
+     }
+
+     // Раскрытие поля ввода при наведении на контейнер
+     &:hover input[type='text'], input[type='text']:focus {
+         width :300px;
+         background-color:v.$color-gray-light;
+         padding :10px 40px 10px 20px;
+     }
+}

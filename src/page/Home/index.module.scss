@@ -1,0 +1,29 @@
+@use '../../shared/scss/base/variables' as v;
+
+.main {
+	flex: 1;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: v.$max-width;
+	padding: v.$container-padding;
+}
+
+// .header {
+//     position: sticky; 
+//     top: 0;         
+//     z-index: 1000;  
+// 		background-color: transparent;
+//     transition: background-color 0.3s ease, opacity 0.3s ease; 
+// }
+
+// .header:hover {
+//     opacity: 1;
+// }
+
+
+// .header {
+//     position: -webkit-sticky; 
+//     position: sticky;
+// }

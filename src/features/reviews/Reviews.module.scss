@@ -1,0 +1,113 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+@use '../../shared/scss/main.scss';
+
+.reviews {
+	max-width: v.$header-width;
+	margin: 0 auto;
+	// margin-bottom: 130px !important;
+	height: 90vh;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 50px;
+
+		&_title {
+			@include mixins.title2(v.$color-dark);
+		}
+
+		&_link {
+			@include mixins.btn-main;
+
+			&:hover {
+				background-color: v.$color-ascent-yellow;
+			}
+		}
+	}
+
+  &__bottom {
+    display: flex;
+    gap: 15px;
+  }
+
+}
+
+.reviews__card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	position: relative;
+	overflow: hidden;
+
+	height: 500px;
+	width: 430px;
+
+	color: v.$color-dark;
+	background-color: v.$color-white-250;
+	border-radius: v.$br28;
+
+	&_left {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&_title {
+		font-family: v.$ffRubik;
+		font-size: v.$fs24;
+		line-height: v.$lh28;
+		font-weight: 600;
+	}
+	&_desc {
+		font-family: v.$ffOpenSans;
+		font-family: v.$ffOpenSans;
+		font-size: v.$fs16;
+		line-height: v.$lh22;
+		font-weight: 400;
+		max-width: 300px;
+	}
+
+	&_avatar {
+		height: 68px;
+		width: 68px;
+		border-radius: v.$br50;
+		margin-bottom: 49px;
+	}
+}
+
+.card_top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 32px;
+}
+
+.card-bottom img {
+	position: absolute;
+	object-fit: cover;
+	bottom: 0;
+}
+
+// Звезды
+.rating {
+	display: inline-block;
+}
+
+.star {
+	display: inline-block;
+	cursor: pointer;
+	
+	background-image: url('../assets/images/stars.png');
+	background-size: cover;
+	background-color: transparent;
+
+	width: 20px;
+	height: 20px;
+}
+
+.star.selected {
+	background-color: #fdd835; /* Цвет выбранной звезды */
+}

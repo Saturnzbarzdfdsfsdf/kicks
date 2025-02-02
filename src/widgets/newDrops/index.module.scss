@@ -1,0 +1,73 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.newDrop {
+	max-width: v.$header-width;
+	padding-bottom: 100px;
+	margin: 0 auto;
+}
+
+.newDropTop {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+
+	a {
+		@include mixins.btn-main;
+
+		&:hover {
+			background-color: v.$color-ascent-yellow;
+		}
+	}
+}
+
+.title2 {
+	@include mixins.title2;
+	margin-bottom: 40px;
+}
+
+.secondSwiper {
+	overflow: hidden;
+	height: auto;
+	height: 500px;
+}
+
+.swiperSlide a img {
+	border: 8px solid white;
+	border-radius: 40px;
+	margin-bottom: 16px;
+	transition: v.$transition-base;
+	position: relative;
+}
+
+.swiperSlide a:hover img {
+	border-color: v.$color-gray-main;
+}
+
+.swiperSlide a::before {
+	content: 'New';
+	position: absolute;
+	background-color: v.$color-ascent-blue;
+
+	padding: 5px;
+	border-radius: 25% 10%;
+	pointer-events: none;
+	top: 20px;
+	left: 20px;
+}
+
+.titleCard {
+	font-size: v.$fs20;
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.sliderBtn {
+	display: block;
+	@include mixins.btn-main(14px 70px, v.$color-dark);
+}
+
+.sliderBtn:hover {
+	background-color: v.$color-ascent-yellow;
+}
