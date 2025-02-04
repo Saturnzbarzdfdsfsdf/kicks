@@ -11,7 +11,7 @@ const index = () => {
 	return (
 		<div className={styles.container}>
 			<DoItSlider />
-			<NewDrops />
+			<NewDrops title='New Drops' />
 			<CategoriesSlider />
 			<Reviews />
 	

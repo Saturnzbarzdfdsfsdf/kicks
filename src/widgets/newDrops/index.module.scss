@@ -23,7 +23,7 @@
 }
 
 .title2 {
-	@include mixins.title2;
+	@include mixins.title2(v.$color-dark);
 	margin-bottom: 40px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .swiperSlide a img {
-	border: 8px solid white;
+	border: 8px solid v.$color-white-255;
 	border-radius: 40px;
 	margin-bottom: 16px;
 	transition: v.$transition-base;

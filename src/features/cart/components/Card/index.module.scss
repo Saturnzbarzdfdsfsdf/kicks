@@ -1,0 +1,78 @@
+@use '../../../../shared/scss/base/variables' as v;
+@use '../../../../shared/scss/base/mixins';
+
+.card {
+	width: 750px;
+	height: 420px;
+	background-color: v.$color-white-250;
+	border-radius: v.$br28;
+	padding: 24px;
+	font-family: v.$ffOpenSans;
+	margin-bottom: 170px;
+
+	&__title {
+		font-size: v.$fs40;
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+
+	&__description {
+		color: v.$color-dark;
+		font-size: v.$fs16;
+		line-height: v.$lh22;
+		font-weight: 400;
+		margin-bottom: 50px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-right: 100px;
+
+		&_title {
+			color: v.$color-dark;
+			font-size: v.$fs20;
+			font-weight: 600;
+			line-height: v.$lh28;
+		}
+
+		&_size {
+			display: flex;
+			gap: 40px;
+			color: v.$color-gray-main;
+			font-size: v.$fs20;
+			line-height: v.$lh28;
+			font-weight: 600;
+		}
+
+		&_desc {
+			margin-bottom: 20px;
+		}
+
+		&_icons {
+			display: flex;
+			gap: 20px;
+			margin-top: auto;
+		}
+	}
+
+	&__img {
+		width: 200px;
+		height: 225px;
+		border-radius: 25px;
+	}
+
+	&__price {
+		color: v.$color-ascent-blue;
+		font-family: v.$ffRubik;
+		font-size: v.$fs24;
+		line-height: v.$lh28;
+		font-weight: 600;
+	}
+}
+
+.card__bottom {
+	display: flex;
+	justify-content: space-between;
+}

@@ -12,7 +12,7 @@ const sortCategories = [
 ]
 
 const FilterSort = () => {
-	const [isSortOpen, setIsSortOpen] = useState(false)
+	const [isSortOpen, setIsSortOpen] = useState(true)
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 
 	const toggleSort = () => setIsSortOpen(prev => !prev)

@@ -101,9 +101,9 @@
 	}
 
 	a {
-		@include mixins.btn-main; // Используйте миксин для кнопки
+		@include mixins.btn-main(14px 70px, v.$color-dark);
 		&:hover {
-			background-color: v.$color-ascent-yellow; // Эффект при наведении
+			background-color: v.$color-ascent-yellow; 
 		}
 	}
 }

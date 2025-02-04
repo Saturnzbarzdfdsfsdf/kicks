@@ -74,11 +74,12 @@ const Header = () => {
 							</a>
 						</div>
 
-						<div className={styles.header__cart}>
-							<Link to={'/cart'}>
+						<Link to={'/cart'}>
+							<div className={styles.header__cart}>
 								<p>0</p>
-							</Link>
-						</div>
+							</div>
+						</Link>
+						
 					</div>
 				</div>
 			</div>
