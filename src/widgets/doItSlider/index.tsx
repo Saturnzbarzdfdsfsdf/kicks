@@ -8,10 +8,11 @@ import slide2 from '../../shared/assets/images/nikeSlider2.png'
 import slide3 from '../../shared/assets/images/nikeSlider3.jpg'
 
 import styles from './index.module.scss'
+import { Link } from 'react-router'
 
 const Index: React.FC = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
-	const swiperRef = useRef<SwiperCore>()
+	const swiperRef = useRef<SwiperCore>(null)
 
 	const slides = [
 		{
@@ -55,7 +56,7 @@ const Index: React.FC = () => {
 					onSwiper={swiper => (swiperRef.current = swiper)}
 					onSlideChange={swiper => setCurrentSlide(swiper.activeIndex)}
 				>
-					{slides.map((slide) => (
+					{slides.map(slide => (
 						<SwiperSlide key={slide.id}>
 							<img
 								className={styles.mainSlide}
@@ -73,7 +74,7 @@ const Index: React.FC = () => {
 						<br />
 						Don't wait, act
 					</p>
-					<a href='#'>buy</a>
+					<Link to='cart'>buy</Link>
 				</div>
 
 				<div className={styles.miniSlide}>

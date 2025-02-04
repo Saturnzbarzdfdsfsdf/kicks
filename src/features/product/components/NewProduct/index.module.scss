@@ -1,0 +1,77 @@
+@use '../../../../shared/scss/base/variables' as v;
+
+.new {
+	margin: 0 auto;
+	max-width: v.$header-width;
+
+	.top {
+		position: relative;
+		&__sale {
+			position: absolute;
+			bottom: 120px;
+			left: 50px;
+
+			&_title {
+				color: v.$color-white-255;
+				font-family: Rubik;
+				font-size: v.$fs74;
+				font-weight: 600;
+				line-height: v.$lh88;
+			}
+
+			p {
+				color: v.$color-gray-light;
+				opacity: 0.8;
+				font-family: v.$ffOpenSans;
+				font-size: v.$fs20;
+				line-height: v.$lh28;
+				font-weight: 400;
+				max-width: 500px;
+			}
+		}
+
+		img {
+			margin-top: 80px;
+			margin-bottom: 30px;
+		}
+	}
+
+	.bottom {
+		display: flex;
+	}
+}
+
+.sideBar__top {
+	margin-bottom: 30px;
+}
+
+.sideBar {
+	margin-top: 5px;
+	width: 300px;
+
+	&__title {
+		color: rgb(35, 35, 33);
+		font-family: Rubik;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 43px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+}
+
+.grid {
+	flex: 2;
+	margin: 100px 0 60px 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	 grid-auto-rows: 1fr; 
+	// grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 25px;
+	grid-row-gap: 25px;
+}
+
+.pagination {
+	height: 100px;
+	background-color: saddlebrown;
+}

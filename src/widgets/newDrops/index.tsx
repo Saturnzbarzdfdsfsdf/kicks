@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
+
 import 'swiper/swiper-bundle.css'
 import styles from './index.module.scss'
 
@@ -37,7 +38,7 @@ const Index = () => {
 				slidesPerView={4}
 			>
 				{slides.map(slide => (
-					<div className={styles.swiperWrapper}>
+				<div className={styles.swiperWrapper}>
 						<SwiperSlide key={slide.id} className={styles.swiperSlide}>
 							
 							<a href='#'>

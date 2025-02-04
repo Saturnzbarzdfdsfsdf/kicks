@@ -1,7 +1,9 @@
 import logo from '../../assets/images/Logo.png'
+import User from '../../assets/icon/User.svg'
+import Search from '../../assets/icon/Search.svg'
 
 import styles from './index.module.scss'
-
+import { Link } from 'react-router'
 
 const Header = () => {
 	return (
@@ -11,7 +13,7 @@ const Header = () => {
 					<nav className={styles.header__nav}>
 						<ul className={styles.navList}>
 							<li className={styles.navItem}>
-								<a href='#'>New Drops 🔥</a>
+								<Link to='new'>New Drops 🔥</Link>
 							</li>
 
 							<li className={`${styles.navItem} ${styles.dropdown}`}>
@@ -23,7 +25,7 @@ const Header = () => {
 										<a href='#'>Одежда</a>
 									</li>
 									<li className={styles.dropdownItem}>
-										<a href='#'>Обувь</a>
+										<Link to='shoes'>Обувь</Link>
 									</li>
 									<li className={styles.dropdownItem}>
 										<a href='#'>Аксессуары</a>
@@ -51,9 +53,9 @@ const Header = () => {
 					</nav>
 
 					<div className={styles.header__logo}>
-						<a href='/'>
+						<Link to='/'>
 							<img src={logo} alt='logo' />
-						</a>
+						</Link>
 					</div>
 
 					<div className={styles.header__actions}>
@@ -61,21 +63,21 @@ const Header = () => {
 							<form action='/search' method='get'>
 								<input type='text' name='q' placeholder='Поиск...' />
 								<button type='submit'>
-									<img src='./src/assets/icon/Search.svg' alt='' />
+									<img src={Search} alt='' />
 								</button>
 							</form>
 						</div>
 
 						<div className={styles.header__user}>
 							<a href='#'>
-								<img src='./src/assets/icon/User.svg' alt='user' />
+								<img src={User} alt='user' />
 							</a>
 						</div>
 
 						<div className={styles.header__cart}>
-							<a href='#'>
+							<Link to={'/cart'}>
 								<p>0</p>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

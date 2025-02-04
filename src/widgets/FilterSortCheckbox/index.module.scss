@@ -1,0 +1,75 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.form__sort {
+	position: relative;
+	&_title {
+		@include mixins.sideBarTitle;
+
+		&:hover {
+			color: v.$color-ascent-yellow;
+		}
+	}
+
+	&_list {
+		color: v.$color-dark;
+		font-family: v.$ffOpenSans;
+		font-size: v.$fs16;
+		line-height: v.$lh22;
+		font-weight: 600;
+
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.6s ease;
+
+		&.open {
+			max-height: 300px;
+		}
+
+		li:hover {
+			color: v.$color-ascent-yellow;
+		}
+	}
+}
+
+.checkbox {
+	position: absolute;
+	opacity: 0;
+
+	&:checked + .checkboxView::after {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.checkboxLabel {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.checkboxView {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border: 2px solid v.$color-gray-main;
+	border-radius: 4px;
+	margin-right: 10px;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		background-color: v.$color-ascent-yellow;
+		transform: translate(-50%, -50%) scale(0);
+		transition: transform 0.2s ease-in-out;
+	}
+}
+
+.arrow {
+	@include mixins.sideBarArrow;
+}

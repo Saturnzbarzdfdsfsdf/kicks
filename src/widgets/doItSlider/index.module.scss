@@ -6,6 +6,7 @@
 }
 
 .title {
+	
 	font-family: v.$ffRubik;
 	font-size: 223.5px;
 	font-weight: 700;
@@ -26,6 +27,7 @@
 
 	width: 1320px;
 	height: 850px;
+
 	border-radius: v.$br64;
 }
 
@@ -55,7 +57,7 @@
 .miniSlideImg {
 	cursor: pointer;
 	z-index: 10;
-
+	
 	width: 170px;
 	height: 170px;
 	opacity: 0.8;
@@ -68,8 +70,9 @@
 }
 
 .sliderContent {
-	position: absolute;
 	z-index: 3;
+	position: absolute;
+
 
 	bottom: 460px;
 	left: 50px;

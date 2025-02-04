@@ -4,7 +4,7 @@
 	font-size: v.$fs14;
 	font-family: v.$ffRubik;
 	font-weight: 500;
-	
+
 	color: v.$color-white-255;
 	background-color: $color;
 
@@ -21,7 +21,6 @@
 	text-transform: uppercase;
 }
 
-
 @mixin title2($color: v.$color-white-255) {
 	font-family: v.$ffRubik;
 	color: $color;
@@ -31,4 +30,35 @@
 
 	text-align: left;
 	text-transform: uppercase;
+}
+
+@mixin sideBarTitle {
+	display: flex;
+	position: relative;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+
+	font-size: v.$fs16;
+	font-family: v.$ffRubik;
+	line-height: v.$lh22;
+	font-weight: 600;
+	color: v.$color-dark;
+	padding-bottom: 20px;
+}
+
+@mixin sideBarArrow {
+	margin-left: auto;
+	display: inline-block;
+	transition: transform 0.3s ease;
+	width: 15px;
+	height: 15px;
+	background-image: url('../../shared/assets/icon/arrow.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	transform: rotate(180deg);
+
+	&.open {
+		transform: rotate(0deg);
+	}
 }
