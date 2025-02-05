@@ -1,0 +1,17 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.product {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	max-width: v.$header-width;
+	margin: 32px auto 120px auto;
+
+	&__box {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 100px;
+	}
+}

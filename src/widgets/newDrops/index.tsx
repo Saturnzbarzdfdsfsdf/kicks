@@ -1,11 +1,17 @@
-import type { FC } from 'react'
+import { Link } from 'react-router'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
+import { useDispatch } from 'react-redux'
+
+import { addToCart } from '../../features/cart/model/cartSlice'
+
+import type { FC } from 'react'
+
+import slide1 from '../../shared/assets/images/new1.jpeg'
 
 import 'swiper/swiper-bundle.css'
 import styles from './index.module.scss'
 
-import slide1 from '../../shared/assets/images/new1.jpeg'
 
 interface IPropsNewDrop {
 	title: string
@@ -13,6 +19,7 @@ interface IPropsNewDrop {
 
 const Index: FC<IPropsNewDrop> = props => {
 	const { title } = props
+	const dispatch = useDispatch()
 
 	const slides = [
 		{ id: 1, src: slide1, title: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES' },
@@ -25,11 +32,18 @@ const Index: FC<IPropsNewDrop> = props => {
 		{ id: 8, src: slide1, title: 'ADIDAS 4DFWD X PARLEY RUNNING SHOES' },
 	]
 
+	   const handleAddToCart = () => {
+				dispatch(addToCart(title)) 
+			}
+
+
 	return (
 		<section className={styles.newDrop}>
 			<div className={styles.newDropTop}>
 				<h2 className={styles.title2}>{title}</h2>
-				<a className={styles.desc} href='#'>new collection</a>
+				<Link className={styles.desc} to='new'>
+					new collection
+				</Link>
 			</div>
 
 			<Swiper
@@ -44,13 +58,13 @@ const Index: FC<IPropsNewDrop> = props => {
 				{slides.map(slide => (
 					<div className={styles.swiperWrapper}>
 						<SwiperSlide key={slide.id} className={styles.swiperSlide}>
-							<a  href='#'>
+							<Link to='single'>
 								<img src={slide.src} alt={`Slide ${slide.id}`} />
 								<p className={styles.titleCard}>{slide.title}</p>
-							</a>
-							<a className={styles.sliderBtn} href='#'>
-								buy
-							</a>
+							</Link>
+							<button onClick={handleAddToCart} className={styles.sliderBtn}>
+								add to cart
+							</button>
 						</SwiperSlide>
 					</div>
 				))}

@@ -1,9 +1,9 @@
+import { Link } from 'react-router'
 import logo from '../../assets/images/Logo.png'
 import User from '../../assets/icon/User.svg'
 import Search from '../../assets/icon/Search.svg'
 
 import styles from './index.module.scss'
-import { Link } from 'react-router'
 
 const Header = () => {
 	return (
@@ -17,7 +17,7 @@ const Header = () => {
 							</li>
 
 							<li className={`${styles.navItem} ${styles.dropdown}`}>
-								<a href='#' className={styles.dropdownToggle}>
+								<a href='*' className={styles.dropdownToggle}>
 									Man
 								</a>
 								<ul className={styles.dropdownMenu}>

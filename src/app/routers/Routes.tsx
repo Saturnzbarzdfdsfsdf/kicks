@@ -1,7 +1,7 @@
 
 import { Routes, Route } from 'react-router-dom'
 
-import { HomePage } from 'src/page'
+import { HomePage, NotFoundPage, SingleProductPage } from 'src/page'
 import { Cart, NewProduct, ProductList } from '../../features/index'
 
 import Layout from '../layout'
@@ -15,6 +15,8 @@ const AppRouter = () => {
 				<Route path='cart' element={<Cart />} />
 				<Route path='new' element={<NewProduct />} />
 				<Route path='shoes' element={<ProductList />} />
+				<Route path='single' element={<SingleProductPage />} />
+				<Route path='*' element={<NotFoundPage />} />
 			</Route>
 		</Routes>
 	)

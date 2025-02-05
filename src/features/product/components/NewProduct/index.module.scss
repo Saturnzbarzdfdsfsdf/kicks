@@ -73,5 +73,23 @@
 
 .pagination {
 	height: 100px;
-	background-color: saddlebrown;
+	
 }
+
+.dots {
+	 display: flex;
+	 justify-content: center;
+	 gap: 10px;
+	 
+	 div {
+		display: grid;
+		place-items: center;
+		font-size: 30px;
+		 height: 50px;
+		 width: 50px;
+		 background-color: rgb(155, 155, 155);
+		 border-radius: 10px;
+	 }
+}
+
+

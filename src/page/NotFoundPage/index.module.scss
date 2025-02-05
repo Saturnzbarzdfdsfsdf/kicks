@@ -1,0 +1,33 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; 
+    background-color: v.$color-gray-light; 
+    color: v.$color-dark; 
+    text-align: center;
+}
+
+.title {
+    font-size: 5rem; 
+    margin: 0;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin: 20px 0; 
+}
+
+.link {
+    font-size: 1rem; 
+    color: #007bff;
+    text-decoration: none; 
+    
+    &:hover {
+        text-decoration: underline; 
+    }
+}

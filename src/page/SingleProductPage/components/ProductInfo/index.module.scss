@@ -1,0 +1,101 @@
+@use '../../../../shared/scss/base/variables' as v;
+@use '../../../../shared/scss/base/mixins';
+
+.product {
+	display: flex;
+	flex-direction: column;
+	max-width: 430px;
+	gap: 30px;
+	font-family: v.$ffRubik;
+	
+
+	&__title {
+		color: v.$color-dark;
+		font-size: v.$fs30;
+		line-height: v.$lh38;
+		font-weight: 600;
+	}
+
+	span {
+		color: rgb(74, 105, 226);
+		font-family: Rubik;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 28px;
+		letter-spacing: 0%;
+		text-align: left;
+	}
+
+	&__btn_box {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.btn {
+			@include mixins.btn-main;
+			&:hover {
+				background-color: v.$color-ascent-yellow;
+			}
+		}
+
+		.add_bag {
+			@include mixins.btn-main(14px 80px, v.$color-dark);
+			width: 100%;
+			&:hover {
+				background-color: v.$color-ascent-yellow;
+			}
+		}
+
+		.favorite {
+			@include mixins.btn-main(14px 20px, v.$color-dark);
+
+			&:hover {
+				background-color: v.$color-ascent-yellow;
+			}
+		}
+
+		div {
+			display: flex;
+			gap: 10px;
+		}
+	}
+}
+
+.description {
+	&__title {
+		color: v.$color-dark;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+
+	&__info {
+		position: relative;
+		margin: 0 auto;
+		max-width: 350px;
+		margin-bottom: 1em;
+		color: rgba(35, 35, 33, 0.619);
+		font-family: v.$ffOpenSans;
+		font-weight: 400;
+		line-height: v.$lh22;
+	}
+  
+  &__infoTop {
+    color: rgba(35, 35, 33, 0.619);
+    
+  }
+}
+
+.description__infoTop br {
+	content: '';
+	display: block;
+	margin-bottom: 1em;
+}
+
+.description__info::before {
+	content: '•'; 
+	position: absolute; 
+	left: -1.5em; 
+	font-size: 1.5em; 
+	color: rgba(0, 0, 0, 0.438); 
+}

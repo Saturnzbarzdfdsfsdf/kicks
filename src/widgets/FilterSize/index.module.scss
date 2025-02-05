@@ -1,29 +1,3 @@
-// .filter__form {
-// 	&_size {
-// 		display: flex;
-// 		flex-direction: column;
-// 		cursor: pointer;
-// 		gap: 10px;
-// 		font-size: 20px;
-
-// 		ul {
-// 			display: flex;
-// 			gap: 10px;
-
-// 			li {
-// 				text-align: center;
-// 				cursor: pointer;
-// 				background-color: white;
-// 				width: 50px;
-// 				height: 50px;
-// 				border-radius: 8px;
-// 				&:hover {
-// 					opacity: 0.8;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 
 @use '../../shared/scss/base/variables' as v;
 @use '../../shared/scss/base/mixins';
@@ -45,6 +19,7 @@
 		display: flex;
 		gap: 10px;
 		flex-wrap: wrap;
+
 		
 		max-height: 0;
 		overflow: hidden;
@@ -61,7 +36,7 @@
 			width: 50px;
 			height: 50px;
 			border-radius: 8px;
-			
+
 			&:hover {
 				opacity: 0.8;
 			}

@@ -3,7 +3,7 @@
 
 .newDrop {
 	max-width: v.$header-width;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 	margin: 0 auto;
 }
 
@@ -41,11 +41,11 @@
 	position: relative;
 }
 
-.swiperSlide a:hover img {
+.swiperSlide button:hover img {
 	border-color: v.$color-gray-main;
 }
 
-.swiperSlide a::before {
+.swiperSlide button::before {
 	content: 'New';
 	position: absolute;
 	background-color: v.$color-ascent-blue;
@@ -65,9 +65,13 @@
 
 .sliderBtn {
 	display: block;
-	@include mixins.btn-main(14px 70px, v.$color-dark);
+	@include mixins.btn-main(14px 50px, v.$color-dark);
 }
 
 .sliderBtn:hover {
 	background-color: v.$color-ascent-yellow;
+}
+
+.desc {
+	font-size: v.$fs24;
 }
