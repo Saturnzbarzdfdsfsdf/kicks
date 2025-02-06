@@ -1,0 +1,21 @@
+@use '../../../shared/scss/base/variables' as v;
+@use '../../../shared/scss/base/mixins';
+
+
+
+.titleCard {
+	font-size: v.$fs20;
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.sliderBtn {
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	@include mixins.btn-main(14px 50px, v.$color-dark);
+
+	&:hover {
+		background-color: v.$color-ascent-yellow;
+	}
+}

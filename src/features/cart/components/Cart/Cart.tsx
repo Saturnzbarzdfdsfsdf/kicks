@@ -3,8 +3,15 @@ import { CartCard } from '../../index'
 import { NewDrops } from 'src/widgets'
 
 import styles from './index.module.scss'
+import { useAppDispatch, useAppSelector } from 'src/app/Hook'
+import { selectProducts } from 'src/entities/Product/model/selectors'
+import { selectTotalPrice } from '../../model/selectors'
 
 const Cart = () => {
+	const dispatch = useAppDispatch()
+	const { products } = useAppSelector(selectProducts)
+	const totalPrice = useAppSelector(selectTotalPrice)
+
 	return (
 		<div className={styles.cart}>
 			<div className={styles.cart__top}>
@@ -34,7 +41,7 @@ const Cart = () => {
 						</div>
 						<div className={styles.cart__content_order_Info}>
 							<p>Total</p>
-							<span>$136.00</span>
+							<span>${totalPrice}</span>
 						</div>
 
 						<a href='#' className={styles.cart__content_order_btn}>
@@ -43,7 +50,7 @@ const Cart = () => {
 					</div>
 				</div>
 
-				<NewDrops title='You may also like' />
+				<NewDrops products={products} title='You may also like' />
 			</div>
 		</div>
 	)

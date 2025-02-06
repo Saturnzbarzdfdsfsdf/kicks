@@ -1,18 +1,20 @@
-// cartSlice.ts
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-interface Product {
+export interface IProducts {
 	id: number
-	name: string
+	title: string
 	price: number
+	rating: number
+	sizes: number[]
+	imageUrl: string[]
 }
 
-interface CartItem extends Product {
+interface ICartItem extends IProducts {
 	quantity: number
 }
 
 interface CartState {
-	items: CartItem[]
+	items: ICartItem[]
 	totalItems: number
 	totalPrice: number
 }
@@ -27,31 +29,58 @@ const cartSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
-		addToCart(state, action: PayloadAction<Product>) {
-			const product = action.payload
-			const existingItem = state.items.find(item => item.id === product.id)
+		addToCart(state, action: PayloadAction<ICartItem>) {
+			const newItem = action.payload
+			const existingItem = state.items.find(item => item.id === newItem.id)
 
 			if (existingItem) {
-				existingItem.quantity += 1 // Увеличиваем количество, если товар уже в корзине
+				existingItem.quantity = (existingItem.quantity || 0) + newItem.quantity
+				//Обновляем totalItems и totalPrice
+				state.totalItems += newItem.quantity
+				state.totalPrice += newItem.price * newItem.quantity // 
 			} else {
-				state.items.push({ ...product, quantity: 1 }) // Добавляем новый товар в корзину
+				state.items.push({ ...newItem })
+				//Обновляем totalItems и totalPrice
+				state.totalItems += newItem.quantity
+				state.totalPrice += newItem.price * newItem.quantity //
 			}
-
-			state.totalItems += 1 // Увеличиваем общее количество товаров
-			state.totalPrice += product.price // Увеличиваем общую стоимость
 		},
 		removeFromCart(state, action: PayloadAction<number>) {
-			const productId = action.payload
-			const existingItem = state.items.find(item => item.id === productId)
-
-			if (existingItem) {
-				state.totalItems -= existingItem.quantity // Уменьшаем общее количество товаров
-				state.totalPrice -= existingItem.price * existingItem.quantity // Уменьшаем общую стоимость
-				state.items = state.items.filter(item => item.id !== productId) // Удаляем товар из корзины
+			const itemId = action.payload
+			const removedItem = state.items.find(item => item.id === itemId)
+			if (removedItem) {
+				//Обновляем totalItems и totalPrice
+				state.totalItems -= removedItem.quantity
+				state.totalPrice -= removedItem.price * removedItem.quantity // 
 			}
+			state.items = state.items.filter(item => item.id !== itemId)
+		},
+		updateQuantity(
+			state,
+			action: PayloadAction<{ id: number; quantity: number }>
+		) {
+			const { id, quantity } = action.payload
+			const item = state.items.find(item => item.id === id)
+			if (item) {
+				//Обновляем totalItems и totalPrice
+				state.totalItems += quantity - item.quantity
+				state.totalPrice += (quantity - item.quantity) * item.price
+				item.quantity = quantity
+				if (item.quantity <= 0) {
+					state.items = state.items.filter(item => item.id !== id)
+					state.totalPrice -= item.price * item.quantity
+				}
+			}
+		},
+		clearCart(state) {
+			state.items = []
+			state.totalItems = 0 // Обнуляем totalItems
+			state.totalPrice = 0 // Обнуляем totalPrice
 		},
 	},
 })
 
-export const { addToCart, removeFromCart } = cartSlice.actions
+export const { addToCart, removeFromCart, clearCart, updateQuantity } =
+	cartSlice.actions
+
 export default cartSlice.reducer

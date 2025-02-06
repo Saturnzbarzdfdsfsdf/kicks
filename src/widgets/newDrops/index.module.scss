@@ -57,21 +57,6 @@
 	left: 20px;
 }
 
-.titleCard {
-	font-size: v.$fs20;
-	text-align: center;
-	margin-bottom: 16px;
-}
-
-.sliderBtn {
-	display: block;
-	@include mixins.btn-main(14px 50px, v.$color-dark);
-}
-
-.sliderBtn:hover {
-	background-color: v.$color-ascent-yellow;
-}
-
 .desc {
 	font-size: v.$fs24;
 }

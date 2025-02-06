@@ -3,6 +3,9 @@ import { NewDrops } from 'src/widgets'
 
 import styles from './SinglePage.module.scss'
 
+
+
+
 const index = () => {
 	return (
 		<div className={styles.product}>

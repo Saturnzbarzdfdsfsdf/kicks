@@ -3,9 +3,15 @@ import logo from '../../assets/images/Logo.png'
 import User from '../../assets/icon/User.svg'
 import Search from '../../assets/icon/Search.svg'
 
+import { useAppSelector } from 'src/app/Hook'
+import {  selectTotalItems } from 'src/features/cart/model/selectors'
+
 import styles from './index.module.scss'
 
 const Header = () => {
+
+ const totalItems = useAppSelector(selectTotalItems) 
+
 	return (
 		<header className={styles.header}>
 			<div className={styles.container}>
@@ -76,10 +82,9 @@ const Header = () => {
 
 						<Link to={'/cart'}>
 							<div className={styles.header__cart}>
-								<p>0</p>
+								<p>{totalItems}</p>
 							</div>
 						</Link>
-						
 					</div>
 				</div>
 			</div>
