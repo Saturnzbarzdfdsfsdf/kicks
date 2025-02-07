@@ -11,7 +11,7 @@ interface IPropsSlide {
 }
 
 const Slide: FC<IPropsSlide> = ({ product }) => {
-	const { id, imageUrl, title } = product
+	const { id, imageUrl, title, description } = product
 
 	const dispatch = useAppDispatch()
 
@@ -28,6 +28,7 @@ const Slide: FC<IPropsSlide> = ({ product }) => {
 					<div>No Image</div> //
 				)}
 				<p className={styles.titleCard}>{title}</p>
+				<p className={styles.descriptionCard}>{description}</p>
 			</Link>
 			<button
 				onClick={() => handleAddToCart(product)}

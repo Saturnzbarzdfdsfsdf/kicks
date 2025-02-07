@@ -1,6 +1,7 @@
 export interface IProducts {
 	id: number
 	title: string
+	description: string
 	price: number
 	rating: number
 	sizes: number[]

@@ -3,13 +3,14 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 export interface IProducts {
 	id: number
 	title: string
+	description: string
 	price: number
 	rating: number
 	sizes: number[]
 	imageUrl: string[]
 }
 
-interface ICartItem extends IProducts {
+export interface ICartItem extends IProducts {
 	quantity: number
 }
 

@@ -1,123 +1,122 @@
 @use '../../../../shared/scss/base/variables' as v;
 @use '../../../../shared/scss/base/mixins';
 
-.cardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+.cartCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
-.card {
-    width: 750px;
-		height: 420px;
-    background-color: v.$color-white-250;
-    border-radius: v.$br28;
-    padding: 24px;
-    font-family: v.$ffOpenSans;
-    margin-bottom: 20px; 
-}
+.cartCard {
+  width: 750px;
+  height: 420px;
+  background-color: v.$color-white-250;
+  border-radius: v.$br28;
+  padding: 24px;
+  font-family: v.$ffOpenSans;
+  margin-bottom: 20px;
 
-.card__title {
+  &__top {
+    margin-bottom: 20px;
+  }
+
+  &__title {
     font-size: v.$fs40;
     font-weight: 600;
     margin-bottom: 8px;
-}
+  }
 
-.card__description {
+  &__description {
     color: v.$color-dark;
     font-size: v.$fs16;
     line-height: v.$lh22;
     font-weight: 400;
-    margin-bottom: 20px;
-}
+  }
 
-.card__bottom {
+  &__bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-}
+    align-items: center;
+  }
 
-.card__content {
+  &__link {
+    margin-right: 20px; 
+  }
+
+  &__image {
+    width: 220px;
+    height: 230px;
+    border-radius: 25px;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-right: 20px;
-}
+    gap: 15px;
+    margin-left: 30px;
+    margin-right: auto;
 
-.card__content_title {
-    color: v.$color-dark;
-    font-size: v.$fs20;
+    &Title {
+      color: v.$color-dark;
+      font-size: v.$fs20;
+      font-weight: 600;
+      line-height: v.$lh28;
+    }
+
+    &Description {
+      margin-bottom: 10px;
+    }
+
+    &Size {
+      display: flex;
+      gap: 20px;
+      color: v.$color-gray-main;
+      font-size: v.$fs16;
+      line-height: v.$lh22;
+      font-weight: 600;
+    }
+
+    &Quantity {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      align-items: center;
+    }
+  }
+
+  &__quantityButton {
+    @include mixins.btn_main(10px 13px, v.$color-dark);
+
+    &:hover {
+      background-color: v.$color-ascent-yellow;
+    }
+  }
+
+  &__quantityValue {
+    font-size: 20px;
     font-weight: 600;
-    line-height: v.$lh28;
-}
+  }
 
-.card__content_size {
-    display: flex;
-    gap: 20px;
-    color: v.$color-gray-main;
-    font-size: v.$fs16;
-    line-height: v.$lh22; 
-    font-weight: 600;
-}
-
-.card__content_desc {
-    margin-bottom: 10px; 
-}
-
-.card__content_icons {
+  &__actions {
     display: flex;
     gap: 10px;
-    margin-top: auto;
-}
+    margin-top: 10px;
+  }
 
-.card__img {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 25px;
-    margin-right: 20px; 
-}
+  &__actionButton {
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 
-.card__price {
+  &__price {
     color: v.$color-ascent-blue;
     font-family: v.$ffRubik;
-    font-size: v.$fs20; 
-    line-height: v.$lh22; 
+    font-size: v.$fs20;
+    line-height: v.$lh22;
     font-weight: 600;
-    margin-right: 20px; 
-}
-
-.card__total {
-    font-size: v.$fs24;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.removeButton {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: #c0392b;
-    }
-}
-
-.quantityButton {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 5px;
-
-    &:hover {
-        background-color: #2980b9;
-    }
+  }
 }

@@ -1,10 +1,14 @@
 @use '../../../shared/scss/base/variables' as v;
 @use '../../../shared/scss/base/mixins';
 
-
-
 .titleCard {
 	font-size: v.$fs20;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.descriptionCard {
+	font-size: v.$fs14;
 	text-align: center;
 	margin-bottom: 16px;
 }

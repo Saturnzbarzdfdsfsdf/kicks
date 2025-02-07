@@ -1,6 +1,7 @@
 @use '../base/variables' as v;
 
 @mixin btn-main($padding: 12px 42px, $color: v.$color-ascent-blue) {
+	cursor: pointer;
 	font-size: v.$fs14;
 	font-family: v.$ffRubik;
 	font-weight: 500;
@@ -63,6 +64,3 @@
 	}
 }
 
-// @mixin container {
-
-// }

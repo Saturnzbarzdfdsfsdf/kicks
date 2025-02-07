@@ -41,7 +41,7 @@
 	background-color: v.$color-white-250;
 	color: v.$color-dark;
 
-	width: 400px;
+	width: 550px;
 	height: 420px;
 
 	&_info {
@@ -67,5 +67,32 @@
 		&:hover {
 			background-color: v.$color-ascent-yellow;
 		}
+	}
+}
+
+
+.cart {
+
+}
+
+.emptyCart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 500px; /* Adjust the height as needed */
+	text-align: center;
+	color: v.$color-gray-main;
+
+	h2 {
+		font-size: v.$fs40;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: v.$fs20;
+		line-height: 1.5;
+		max-width: 600px;
+		margin: 0 auto;
 	}
 }
