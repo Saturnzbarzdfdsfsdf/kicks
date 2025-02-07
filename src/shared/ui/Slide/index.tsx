@@ -1,8 +1,9 @@
-import { Link, useParams } from 'react-router-dom'
-import type { FC } from 'react'
-import type { IProducts } from 'src/entities/Product/model/types'
+import { Link } from 'react-router-dom'
 import { addToCart } from '../../../features/cart/model/cartSlice'
 import { useAppDispatch } from 'src/app/Hook'
+
+import type { FC } from 'react'
+import type { IProducts } from 'src/entities/Product/model/types'
 
 import styles from './index.module.scss'
 
@@ -13,7 +14,6 @@ interface IPropsSlide {
 const Slide: FC<IPropsSlide> = ({ product }) => {
 	const dispatch = useAppDispatch()
 	const { imageUrl, title, description } = product
-	const { id } = useParams()
 
 
 	const handleAddToCart = (product: IProducts) => {
@@ -24,7 +24,7 @@ const Slide: FC<IPropsSlide> = ({ product }) => {
 		<div className={styles.slideWrapper}>
 			<Link to={`/single/${product.id}`}>
 				{imageUrl && imageUrl.length > 0 ? (
-					<img src={imageUrl[0]} alt={`Slide ${id}`} />
+					<img src={imageUrl[0]} alt='images shoes'/>
 				) : (
 					<div>No Image</div> //
 				)}

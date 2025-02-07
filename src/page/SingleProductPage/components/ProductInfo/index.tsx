@@ -1,23 +1,38 @@
 import React from 'react'
-
 import styles from './index.module.scss'
 import { FilterColor, FilterSize } from 'src/widgets'
+import {type IProducts } from '../../../../entities/Product/model/types'
+import { addToCart } from 'src/features/cart/model/cartSlice'
+import { useAppDispatch } from 'src/app/Hook'
 
-const index = () => {
+interface ProductInfoProps {
+	product: IProducts 
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
+	const { title, price, description } = product
+	const dispatch = useAppDispatch()
+
+	const handleAddToCart = (product: IProducts) => {
+			dispatch(addToCart({ ...product, quantity: 1 }))
+		}
+
+
 	return (
 		<div className={styles.product}>
-			<h2 className={styles.product__title}>ADIDAS X PARLEY RUNNING SHOES</h2>
-			<span>$136</span>
-
+			<h2 className={styles.product__title}>{title}</h2>{' '}
+			{/* Use the product title */}
+			<span>${price}</span>
 			<FilterColor />
-
 			<FilterSize />
-
 			<div className={styles.product__btn_box}>
 				<div>
-					<a href='#' className={styles.add_bag}>
-						Add to bag
-					</a>
+					<button
+						onClick={() => handleAddToCart(product)}
+						className={styles.add_bag}
+					>
+						Add to cart
+					</button>
 					<a href='#' className={styles.favorite}>
 						f
 					</a>
@@ -26,12 +41,11 @@ const index = () => {
 					Buy now
 				</a>
 			</div>
-
 			<div className={styles.description}>
 				<h3 className={styles.description__title}>About the product</h3>
 				<p className={styles.description__infoTop}>
-					Shadow Navy / Army Green
-          <br />
+					{description}
+					<br />
 					This product is excluded from all promotional discounts and offers.
 				</p>
 
@@ -49,4 +63,4 @@ const index = () => {
 	)
 }
 
-export default index
+export default ProductInfo

@@ -1,32 +1,30 @@
+import { useParams } from 'react-router-dom'
+
 import { ProductImages, ProductInfo } from './components/index'
 import { NewDrops } from 'src/widgets'
-
-// import { useParams } from 'react-router-dom'
-import styles from './SinglePage.module.scss'
 import { useAppSelector } from 'src/app/Hook'
 import { selectProducts } from 'src/entities/Product/model/selectors'
 
-const index = () => {
+import styles from './SinglePage.module.scss'
+
+const SinglePage = () => {
 	const { products } = useAppSelector(selectProducts)
-//  const { id } = useParams() // Получаем ID продукта из URL
+	const { id } = useParams() 
 
-//  // Находим продукт по ID
-//  const product = products.find(p => p.id === id)
+  const product = products.find(p => p.id.toString() === id)
 
-//  // Если продукт не найден, отображаем сообщение об ошибке
-//  if (!product) {
-// 		return <div>Product not found</div>
-//  }
-	
+	if (!product) {
+		return <div>Product not found</div>
+	}
+
 	return (
 		<div className={styles.product}>
 			<div className={styles.product__box}>
 				<div className={styles.product__img}>
-					<ProductImages />
+					<ProductImages product={product} /> 
 				</div>
-
 				<div className={styles.product__info}>
-					<ProductInfo />
+					<ProductInfo product={product} />
 				</div>
 			</div>
 
@@ -35,4 +33,4 @@ const index = () => {
 	)
 }
 
-export default index
+export default SinglePage
