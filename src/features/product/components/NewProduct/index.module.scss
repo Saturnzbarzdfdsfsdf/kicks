@@ -4,37 +4,7 @@
 	margin: 0 auto;
 	max-width: v.$header-width;
 
-	.top {
-		position: relative;
-		&__sale {
-			position: absolute;
-			bottom: 120px;
-			left: 50px;
-
-			&_title {
-				color: v.$color-white-255;
-				font-family: Rubik;
-				font-size: v.$fs74;
-				font-weight: 600;
-				line-height: v.$lh88;
-			}
-
-			p {
-				color: v.$color-gray-light;
-				opacity: 0.8;
-				font-family: v.$ffOpenSans;
-				font-size: v.$fs20;
-				line-height: v.$lh28;
-				font-weight: 400;
-				max-width: 500px;
-			}
-		}
-
-		img {
-			margin-top: 80px;
-			margin-bottom: 30px;
-		}
-	}
+	
 
 	.bottom {
 		display: flex;

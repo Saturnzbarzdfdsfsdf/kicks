@@ -10,7 +10,6 @@ export interface IProducts {
 
 export interface IProductState {
 	products: IProducts[]
-  
 	loading: boolean
 	error: string | null
 }

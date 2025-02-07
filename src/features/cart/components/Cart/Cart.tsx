@@ -1,14 +1,13 @@
-import React from 'react'
 import { CartCard } from '../../index'
 import { NewDrops } from 'src/widgets'
 
 import styles from './index.module.scss'
-import { useAppDispatch, useAppSelector } from 'src/app/Hook'
+import { useAppSelector } from 'src/app/Hook'
 import { selectProducts } from 'src/entities/Product/model/selectors'
 import { selectCartItems, selectTotalItems, selectTotalPrice } from '../../model/selectors'
 
 const Cart = () => {
-	const dispatch = useAppDispatch()
+
 	const { products } = useAppSelector(selectProducts)
 	const totalPrice = useAppSelector(selectTotalPrice)
 	const totalItems = useAppSelector(selectTotalItems)
