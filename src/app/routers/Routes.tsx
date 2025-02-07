@@ -15,7 +15,7 @@ const AppRouter = () => {
 				<Route path='cart' element={<Cart />} />
 				<Route path='new' element={<NewProduct />} />
 				<Route path='shoes' element={<ProductList />} />
-				<Route path='single' element={<SingleProductPage />} />
+				<Route path='single/:id' element={<SingleProductPage />} />
 				<Route path='*' element={<NotFoundPage />} />
 			</Route>
 		</Routes>
