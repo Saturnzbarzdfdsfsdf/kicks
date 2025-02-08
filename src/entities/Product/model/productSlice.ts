@@ -2,10 +2,23 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchProducts } from './productThunk'
 import type { IProductState, IProducts } from './types'
 
+interface ApiResponse {
+	meta: {
+		total_items: number
+		total_pages: number
+		current_page: number
+		per_page: number
+		remaining_count: number
+	}
+	items: IProducts[]
+}
+
 const initialState: IProductState = {
 	products: [],
 	loading: false,
 	error: null,
+	totalPages: 1,
+	currentPage: 1,
 }
 
 const productSlice = createSlice({
@@ -20,9 +33,18 @@ const productSlice = createSlice({
 			})
 			.addCase(
 				fetchProducts.fulfilled,
-				(state, action: PayloadAction<IProducts[]>) => {
+				(
+					state,
+					action: PayloadAction<{
+						items: IProducts[]
+						totalPages: number
+						currentPage: number
+					}>
+				) => {
 					state.loading = false
-					state.products = action.payload 
+					state.products = action.payload.items
+					state.totalPages = action.payload.totalPages
+					state.currentPage = action.payload.currentPage
 				}
 			)
 			.addCase(fetchProducts.rejected, (state, action) => {

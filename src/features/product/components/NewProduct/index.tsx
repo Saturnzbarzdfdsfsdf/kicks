@@ -1,27 +1,35 @@
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import { fetchProducts } from 'src/entities/Product/model/productThunk'
 import { useAppDispatch, useAppSelector } from 'src/app/Hook'
-
 import {
+	selectCurrentPage,
 	selectProducts,
 	selectProductsLoading,
+	selectTotalPages,
 } from 'src/entities/Product/model/selectors'
 
-import { ProductCard, SideBar } from 'src/features'
+import { SideBar } from 'src/features'
+
+import { ProductCard } from '../../../../shared/ui/index'
+
 import { Discount, Pagination } from '../../../../shared/ui/index'
 
 import styles from './index.module.scss'
 
-
 const Index = () => {
 	const dispatch = useAppDispatch()
-	
 	const products = useAppSelector(selectProducts)
 	const isLoading = useAppSelector(selectProductsLoading)
 
+	const totalPages = useAppSelector(selectTotalPages)
+	const currentPage = useAppSelector(selectCurrentPage)
+
+	const [localPage, setLocalPage] = useState(1)
+
 	useEffect(() => {
-		dispatch(fetchProducts())
-	}, [dispatch])
+		dispatch(fetchProducts({ page: localPage }))
+	}, [dispatch, localPage])
 
 	if (isLoading) return <div>Loading...</div>
 
@@ -30,8 +38,9 @@ const Index = () => {
 		return <div>Error: Products data is invalid.</div>
 	}
 
-	console.log(products);
-	
+	const handlePageChange = (newPage: number) => {
+		setLocalPage(newPage)
+	}
 
 	return (
 		<section className={styles.new}>
@@ -51,9 +60,11 @@ const Index = () => {
 					))}
 				</div>
 			</div>
-
-					<Pagination />
-
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				onPageChange={handlePageChange}
+			/>
 			<div className={styles.pagination}></div>
 		</section>
 	)

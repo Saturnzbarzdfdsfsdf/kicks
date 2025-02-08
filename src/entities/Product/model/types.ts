@@ -12,6 +12,8 @@ export interface IProductState {
 	products: IProducts[]
 	loading: boolean
 	error: string | null
+	totalPages: number
+	currentPage: number
 }
 
 export interface IApiResponse {

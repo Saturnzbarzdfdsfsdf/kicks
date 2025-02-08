@@ -1,11 +1,13 @@
 import { apiGet } from '../base'
 
-import type { IProducts } from '../../../entities/Product/model/types'
+import type {IApiResponse } from '../../../entities/Product/model/types'
 
 const PRODUCTS_ENDPOINT = '/sneakers'
 
 export const getProducts = async (
-	limitProduct: number
-): Promise<IProducts[]> => {
-	return await apiGet(`${PRODUCTS_ENDPOINT}?limit=${limitProduct}`)
+	page: number = 1,
+	limit: number = 6
+): Promise<IApiResponse> => {
+	const endpoint = `${PRODUCTS_ENDPOINT}?page=${page}&limit=${limit}`
+	return await apiGet<IApiResponse>(endpoint)
 }

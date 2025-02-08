@@ -1,24 +1,21 @@
-import React, { type FC } from 'react'
+import type { FC } from 'react'
+
+import { type IProducts } from '../../../entities/Product/model/types'
+
 import styles from './index.module.scss'
-import { type IProducts } from '../../../../entities/Product/model/types'
 
 type TPropsProductCard = {
 	product: IProducts
 }
 
-const ProductCard: FC<TPropsProductCard> = ({ product }) => {
-
-
+const Index: FC<TPropsProductCard> = ({ product }) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.swiperWrapper}>
 				<div className={styles.swiperSlide}>
 					<a href='#'>
 						{product.imageUrl?.[0] && (
-							<img
-								src={product.imageUrl[0]}
-								alt={`Product ${product.title}`}
-							/>
+							<img src={product.imageUrl[0]} alt={`Product ${product.title}`} />
 						)}
 						<p className={styles.titleCard}>{product.title}</p>
 					</a>
@@ -35,4 +32,4 @@ const ProductCard: FC<TPropsProductCard> = ({ product }) => {
 	)
 }
 
-export default ProductCard
+export default Index
