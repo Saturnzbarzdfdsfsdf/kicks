@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+
 
 import { PriceFilter } from 'src/widgets'
-import { FilterSort, FilterColor, FilterSize } from 'src/widgets/index'
+import { FilterSort, FilterColor, FilterSize } from '../index'
 
 import styles from './index.module.scss'
 

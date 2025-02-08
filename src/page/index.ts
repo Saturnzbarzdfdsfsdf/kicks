@@ -3,3 +3,4 @@ export { default as SingleProductPage } from './SingleProductPage/SinglePage'
 
 
 export { default as NotFoundPage } from './NotFoundPage'
+export { default as SneakersPage } from './SneakersPage'

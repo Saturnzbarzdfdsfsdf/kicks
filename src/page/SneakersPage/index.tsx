@@ -9,11 +9,9 @@ import {
 	selectTotalPages,
 } from 'src/entities/Product/model/selectors'
 
-import { SideBar } from 'src/features'
+import { SideBar } from '../../widgets/index'
 
-import { ProductCard } from '../../../../shared/ui/index'
-
-import { Discount, Pagination } from '../../../../shared/ui/index'
+import { ProductCard, Discount, Pagination } from '../../shared/ui/index'
 
 import styles from './index.module.scss'
 
