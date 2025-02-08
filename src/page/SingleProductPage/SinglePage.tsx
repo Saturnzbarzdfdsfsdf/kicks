@@ -9,10 +9,10 @@ import { selectProducts } from 'src/entities/Product/model/selectors'
 import styles from './SinglePage.module.scss'
 
 const SinglePage = () => {
-	const { products } = useAppSelector(selectProducts)
-
 	const { id } = useParams()
 	const navigate = useNavigate()
+	
+	const  products  = useAppSelector(selectProducts)
 
 	const productId = typeof products[0]?.id === 'number' ? Number(id) : id
 

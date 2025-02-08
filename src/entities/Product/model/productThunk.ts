@@ -1,14 +1,27 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import type { IProducts } from './types'
+import { getProducts } from 'src/shared/api/product/productApi'
 
-export const fetchProducts = createAsyncThunk<IProducts[]>(
-	'products/fetchProducts',
-	async () => {
-		const response = await fetch('https://8aaa47b20789e6b7.mokky.dev/sneakers')
-		if (!response.ok) {
-			throw new Error('Failed to fetch Products')
-		}
-		return response.json()
+import type { ErrorType, RejectedDataType } from '../../../shared/api/ErrorType'
+import type { IProducts, IApiResponse } from './types'
+
+export const fetchProducts = createAsyncThunk<
+	IProducts[], 
+	void,
+	{ readonly rejectValue: RejectedDataType }
+>('products/fetchProducts', async (_, thunkAPI) => {
+	const limitProduct = 6
+
+	try {
+		const response: IApiResponse = await getProducts(limitProduct)
+
+		return response.items 
+
+	} catch (err: any) {
+		const knownError = err as ErrorType
+		return thunkAPI.rejectWithValue({
+			messageError: knownError.message || 'Unexpected error',
+			status: knownError.response?.status,
+		} as RejectedDataType)
 	}
-)
+})

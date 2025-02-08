@@ -13,3 +13,14 @@ export interface IProductState {
 	loading: boolean
 	error: string | null
 }
+
+export interface IApiResponse {
+	meta: {
+		total_items: number
+		total_pages: number
+		current_page: number
+		per_page: number
+		remaining_count: number
+	}
+	items: IProducts[]
+}

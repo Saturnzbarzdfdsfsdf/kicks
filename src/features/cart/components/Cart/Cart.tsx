@@ -4,15 +4,20 @@ import { NewDrops } from 'src/widgets'
 import styles from './index.module.scss'
 import { useAppSelector } from 'src/app/Hook'
 import { selectProducts } from 'src/entities/Product/model/selectors'
-import { selectCartItems, selectTotalItems, selectTotalPrice } from '../../model/selectors'
+import {
+	selectCartItems,
+	selectTotalItems,
+	selectTotalPrice,
+} from '../../model/selectors'
 
 const Cart = () => {
 
-	const { products } = useAppSelector(selectProducts)
+	const products = useAppSelector(selectProducts)
+	const cartItems = useAppSelector(selectCartItems)
+	
 	const totalPrice = useAppSelector(selectTotalPrice)
 	const totalItems = useAppSelector(selectTotalItems)
 
-	const cartItems = useAppSelector(selectCartItems)
 
 	return (
 		<div className={styles.cart}>

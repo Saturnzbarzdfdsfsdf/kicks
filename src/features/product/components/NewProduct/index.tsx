@@ -8,14 +8,15 @@ import {
 } from 'src/entities/Product/model/selectors'
 
 import { ProductCard, SideBar } from 'src/features'
-import { Discount } from '../../../../shared/ui/index'
+import { Discount, Pagination } from '../../../../shared/ui/index'
 
 import styles from './index.module.scss'
 
+
 const Index = () => {
 	const dispatch = useAppDispatch()
-	const { products } = useAppSelector(selectProducts)
-
+	
+	const products = useAppSelector(selectProducts)
 	const isLoading = useAppSelector(selectProductsLoading)
 
 	useEffect(() => {
@@ -28,6 +29,9 @@ const Index = () => {
 		console.error('Products is not an array:', products)
 		return <div>Error: Products data is invalid.</div>
 	}
+
+	console.log(products);
+	
 
 	return (
 		<section className={styles.new}>
@@ -47,6 +51,8 @@ const Index = () => {
 					))}
 				</div>
 			</div>
+
+					<Pagination />
 
 			<div className={styles.pagination}></div>
 		</section>

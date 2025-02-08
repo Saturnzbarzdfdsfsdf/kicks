@@ -1,14 +1,11 @@
 import { apiGet } from '../base'
 
-import { type IProducts } from '../../../entities/Product/model/types'
+import type { IProducts } from '../../../entities/Product/model/types'
 
-const PRODUCTS_ENDPOINT = 'products'
+const PRODUCTS_ENDPOINT = '/sneakers'
 
 export const getProducts = async (
-	offset: number,
 	limitProduct: number
 ): Promise<IProducts[]> => {
-	return await apiGet(
-		`${PRODUCTS_ENDPOINT}?offset=${offset}&limit=${limitProduct}`
-	)
+	return await apiGet(`${PRODUCTS_ENDPOINT}?limit=${limitProduct}`)
 }

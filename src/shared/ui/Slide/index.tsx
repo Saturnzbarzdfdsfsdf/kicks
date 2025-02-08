@@ -13,6 +13,7 @@ interface IPropsSlide {
 
 const Slide: FC<IPropsSlide> = ({ product }) => {
 	const dispatch = useAppDispatch()
+
 	const { imageUrl, title, description } = product
 
 

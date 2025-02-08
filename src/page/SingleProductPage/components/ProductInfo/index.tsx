@@ -11,12 +11,12 @@ interface ProductInfoProps {
 
 const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 	const { title, price, description } = product
+
 	const dispatch = useAppDispatch()
 
 	const handleAddToCart = (product: IProducts) => {
 			dispatch(addToCart({ ...product, quantity: 1 }))
 		}
-
 
 	return (
 		<div className={styles.product}>

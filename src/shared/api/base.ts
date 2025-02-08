@@ -1,7 +1,8 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios'
 
 
-export const API_URL = 'https://8aaa47b20789e6b7.mokky.dev/sneakers'
+export const API_URL = 'https://8aaa47b20789e6b7.mokky.dev'
+// export const API_URL = 'https://8aaa47b20789e6b7.mokky.dev/sneakers'
 
 // экземпляр axios
 const axiosInstance: AxiosInstance = axios.create({

@@ -27,13 +27,6 @@ const CartCard: FC<CartCardProps> = ({ cartItems }) => {
 		dispatch(updateQuantity({ id, quantity }))
 	}
 
-
-		const calculateTotal = () => {
-			return cartItems
-				.reduce((total, item) => total + item.price * item.quantity, 0)
-				.toFixed(2)
-		}
-
 	return (
 		<div className={styles.cartCardContainer}>
 			{cartItems.length === 0 ? (
@@ -114,7 +107,7 @@ const CartCard: FC<CartCardProps> = ({ cartItems }) => {
 					</div>
 				))
 			)}
-			 {/* <div className={styles.card__total}>Total: ${calculateTotal()}</div>  */}
+
 		</div>
 	)
 }
