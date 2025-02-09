@@ -1,5 +1,6 @@
+// src/features/search/model/filterSelectors.ts
 import { createSelector } from '@reduxjs/toolkit'
-import { selectProducts } from '../../../entities/Product/model/selectors'
+import { selectProducts } from 'src/entities/Product/model/selectors'
 import type { RootState } from 'src/app/store'
 
 export const selectSelectedCategories = (state: RootState) =>
@@ -7,12 +8,19 @@ export const selectSelectedCategories = (state: RootState) =>
 
 export const selectSearchTitle = (state: RootState) => state.filter.searchTitle
 
-// Новый селектор для диапазона цены
 export const selectPriceRange = (state: RootState) => state.filter.priceRange
 
+export const selectSelectedSizes = (state: RootState) =>
+	state.filter.selectedSizes
+
 export const selectFilteredProducts = createSelector(
-	[selectProducts, selectSelectedCategories, selectPriceRange],
-	(products, selectedCategories, priceRange) => {
+	[
+		selectProducts,
+		selectSelectedCategories,
+		selectPriceRange,
+		selectSelectedSizes,
+	],
+	(products, selectedCategories, priceRange, selectedSizes) => {
 		let filtered = products
 
 		// Фильтрация по категориям (если выбраны)
@@ -22,10 +30,20 @@ export const selectFilteredProducts = createSelector(
 			)
 		}
 
+		// Фильтрация по диапазону цены
 		filtered = filtered.filter(
 			product =>
 				product.price >= priceRange[0] && product.price <= priceRange[1]
 		)
+
+		// Фильтрация по размеру (если выбраны)
+		if (selectedSizes.length > 0) {
+			filtered = filtered.filter(
+				product =>
+					product.sizes &&
+					product.sizes.some(size => selectedSizes.includes(size))
+			)
+		}
 
 		return filtered
 	}
