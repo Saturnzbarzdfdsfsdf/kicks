@@ -21,7 +21,7 @@ const index = () => {
 	const loading = useAppSelector(selectProductsLoading)
 
 	useEffect(() => {
-		dispatch(fetchProducts())
+		dispatch(fetchProducts(products))
 	}, [dispatch])
 
 	if (loading) return <div>Loading...</div>
