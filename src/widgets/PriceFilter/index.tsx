@@ -1,15 +1,23 @@
+// src/features/search/ui/PriceFilter/index.tsx
 import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from 'src/app/Hook'
+import { setPriceRange } from 'src/features/search/model/filterSlice'
 import styles from './index.module.scss'
 
 const PriceFilter = () => {
-	const [priceRange, setPriceRange] = useState([0, 1000])
+	// Получаем значение диапазона цены из Redux-состояния
+	const priceRange = useAppSelector(state => state.filter.priceRange)
+	const dispatch = useAppDispatch()
+
+	// Локальное состояние для управления открытием/закрытием блока фильтра
 	const [isPriceOpen, setIsPriceOpen] = useState(false)
 
 	const toggleSort = () => setIsPriceOpen(prev => !prev)
 
 	const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const value = Math.min(Number(e.target.value), 1000) 
-		setPriceRange([priceRange[0], value])
+		const value = Math.min(Number(e.target.value), 1000)
+		// Обновляем диапазон цены, сохраняя минимальное значение (например, 0)
+		dispatch(setPriceRange([priceRange[0], value]))
 	}
 
 	return (
