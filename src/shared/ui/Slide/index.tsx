@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { addToCart } from '../../../features/cart/model/cartSlice'
-import { useAppDispatch } from 'src/app/Hook'
+
+import useAddToCart from 'src/shared/hooks/useAddToCart'
 
 import type { FC } from 'react'
 import type { IProducts } from 'src/entities/Product/model/types'
@@ -12,20 +12,15 @@ interface IPropsSlide {
 }
 
 const Slide: FC<IPropsSlide> = ({ product }) => {
-	const dispatch = useAppDispatch()
+	const { handleAddToCart } = useAddToCart()
 
 	const { imageUrl, title, description } = product
-
-
-	const handleAddToCart = (product: IProducts) => {
-		dispatch(addToCart({ ...product, quantity: 1 }))
-	}
 
 	return (
 		<div className={styles.slideWrapper}>
 			<Link to={`/single/${product.id}`}>
 				{imageUrl && imageUrl.length > 0 ? (
-					<img src={imageUrl[0]} alt='images shoes'/>
+					<img src={imageUrl[0]} alt='images shoes' />
 				) : (
 					<div>No Image</div> //
 				)}

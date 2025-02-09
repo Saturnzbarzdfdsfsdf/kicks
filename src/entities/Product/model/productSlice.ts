@@ -1,17 +1,8 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchProducts } from './productThunk'
+
 import type { IProductState, IProducts } from './types'
 
-interface ApiResponse {
-	meta: {
-		total_items: number
-		total_pages: number
-		current_page: number
-		per_page: number
-		remaining_count: number
-	}
-	items: IProducts[]
-}
 
 const initialState: IProductState = {
 	products: [],

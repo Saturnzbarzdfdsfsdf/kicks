@@ -1,5 +1,3 @@
-
-
 import { PriceFilter } from 'src/widgets'
 import { FilterSort, FilterColor, FilterSize } from '../index'
 

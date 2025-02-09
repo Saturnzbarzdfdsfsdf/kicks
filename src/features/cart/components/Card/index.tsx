@@ -1,8 +1,8 @@
 import { type FC } from 'react'
 
 import { removeFromCart, updateQuantity } from '../../model/cartSlice'
-import CartCardImg from '../../../../shared/assets/images/new1.jpeg'
 
+import CartCardImg from '../../../../shared/assets/images/new1.jpeg'
 import svgCart from '../../../../shared/assets/icon/cart.svg'
 import svgHeart from '../../../../shared/assets/icon/heart.svg'
 
@@ -17,6 +17,7 @@ interface CartCardProps {
 }
 
 const CartCard: FC<CartCardProps> = ({ cartItems }) => {
+
 	const dispatch = useAppDispatch()
 
 	const handleRemoveFromCart = (id: number) => {
@@ -107,7 +108,6 @@ const CartCard: FC<CartCardProps> = ({ cartItems }) => {
 					</div>
 				))
 			)}
-
 		</div>
 	)
 }

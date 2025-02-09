@@ -1,6 +1,9 @@
 @use '../../scss/base/variables' as v;
 @use '../../scss/base/mixins';
 
+.wrapper {
+	position: relative;
+}
 
 .swiperWrapper a img {
 	border: 8px solid white;
@@ -32,9 +35,27 @@
 	margin-bottom: 16px;
 }
 
+.desc {
+	font-size: v.$fs14;
+	text-align: center;
+	margin-bottom: 12px;
+}
+
+.btnBox {
+	display: flex;
+	gap: 5px;
+	max-width: 316px;
+
+	
+}
+
 .sliderBtn {
-	display: block;
-	@include mixins.btn-main(14px 70px, v.$color-dark);
+	@include mixins.btn-main(14px 30px, v.$color-dark);
+
+	&:first-child {
+	flex: 1;
+	margin-right: auto; 
+	}
 }
 
 .sliderBtn:hover {
@@ -42,6 +63,3 @@
 }
 
 
-.wrapper{
-  position: relative;
-}

@@ -36,20 +36,17 @@
 		}
 	}
 
-	.black {
-		background-color: rgb(0, 0, 0);
+	.white {
+		background-color: v.$color-white-255;
 	}
 	.blue {
-		background-color: blue;
+		background-color: v.$color-ascent-blue;
 	}
 
-	.green {
-		background-color: green;
+	.red {
+		background-color: rgba(223, 62, 62, 0.797);
 	}
 
-	.yellow {
-		background-color: yellow;
-	}
 }
 
 .arrow {

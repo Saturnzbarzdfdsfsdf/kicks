@@ -28,10 +28,10 @@ const FilterColor = () => {
 					}`}
 					aria-hidden={!isColorOpen}
 				>
-					<li className={styles.black}></li>
+					<li className={styles.white}></li>
 					<li className={styles.blue}></li>
-					<li className={styles.green}></li>
-					<li className={styles.yellow}></li>
+					<li className={styles.red}></li>
+
 				</ul>
 			</div>
 		</>
