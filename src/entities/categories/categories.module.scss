@@ -102,3 +102,49 @@
 		background-color: v.$color-gray-main;
 	}
 }
+
+@media (max-width: 720px) {
+	.firstThird {
+		max-width: 620px;
+
+
+	}
+
+	.slideContent {
+	img {
+		border-radius: v.$br64;
+	}
+
+	&Title {
+		font-size: v.$fs30;
+		bottom: 40px;
+		margin-left: 40px;
+	}
+
+	&Link {
+		bottom: 45px;
+		right: 30px;
+
+		width: 35px;
+		height: 35px;
+
+	}
+}
+
+	.title2 {
+		font-size: 50px;
+	}
+
+.customButtonPrev,
+.customButtonNext {
+	font-size: v.$fs30;
+	width: 45px;
+	height: 45px;
+
+}
+.swiperNavigation {
+	top: 85px;
+	right: 100px;
+
+}
+}

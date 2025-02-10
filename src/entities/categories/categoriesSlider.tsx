@@ -1,6 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
+import { useSmoothScrollContext } from 'src/app/context/SmoothScrollProvider'
 
 import 'swiper/swiper-bundle.css'
 import styles from './categories.module.scss'
@@ -9,10 +10,17 @@ import slideNike from '../../shared/assets/images/cat3.jpg'
 import arrowLink from '../../shared/assets/icon/arrow_right.svg'
 
 const CategoriesSlider: React.FC = () => {
+	const { registerSectionRef } = useSmoothScrollContext()
+
 	return (
 		<section className={styles.categories}>
 			<div className={styles.firstThird}>
-				<h2 className={styles.title2}>Categories</h2>
+				<h2
+					ref={registerSectionRef('Categories')}
+					className={styles.title2}
+				>
+					Categories
+				</h2>
 
 				<div className={styles.swiperNavigation}>
 					<div className={`${styles.customButtonPrev} prev`}>{'<'}</div>

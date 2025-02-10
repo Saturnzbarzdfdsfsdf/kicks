@@ -1,12 +1,10 @@
 @use '../../shared/scss/base/variables' as v;
 @use '../../shared/scss/base/mixins';
-@use '../../shared/scss/main.scss';
 
 .reviews {
 	max-width: v.$header-width;
 	margin: 0 auto;
-	// margin-bottom: 130px !important;
-	height: 90vh;
+	margin-bottom: 100px;
 
 	&__top {
 		display: flex;
@@ -63,7 +61,6 @@
 	}
 	&_desc {
 		font-family: v.$ffOpenSans;
-		font-family: v.$ffOpenSans;
 		font-size: v.$fs16;
 		line-height: v.$lh22;
 		font-weight: 400;
@@ -92,22 +89,69 @@
 }
 
 // Звезды
-.rating {
-	display: inline-block;
-}
+// .rating {
+// 	display: inline-block;
+// }
 
-.star {
-	display: inline-block;
-	cursor: pointer;
+// .star {
+// 	display: inline-block;
+// 	cursor: pointer;
 	
-	background-image: url('../assets/images/stars.png');
-	background-size: cover;
-	background-color: transparent;
+// 	background-image: url('../assets/images/stars.png');
+// 	background-size: cover;
+// 	background-color: transparent;
 
-	width: 20px;
-	height: 20px;
+// 	width: 20px;
+// 	height: 20px;
+// }
+
+// .star.selected {
+// 	background-color: #fdd835; 
+// }
+
+
+@media (max-width: 720px) {
+
+	.reviews__top_title {
+		font-size: 50px;
+	}
+.reviews__card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	position: relative;
+	overflow: hidden;
+
+	height: 500px;
+	width: 430px;
+
+	color: v.$color-dark;
+	background-color: v.$color-white-250;
+	border-radius: v.$br28;
+
+	&_left {
+		display: flex;
+		gap: 10px;
+	}
+
+	&_title {
+		font-size: v.$fs16;
+		// line-height: v.$lh22;
+		font-weight: 600;
+	}
+	&_desc {
+
+		font-size: v.$fs14;
+		font-weight: 300;
+		max-width: 300px;
+	}
+
+	&_avatar {
+		height: 38px;
+		width: 38px;
+		border-radius: v.$br50;
+		margin-bottom: 49px;
+	}
 }
-
-.star.selected {
-	background-color: #fdd835; /* Цвет выбранной звезды */
 }

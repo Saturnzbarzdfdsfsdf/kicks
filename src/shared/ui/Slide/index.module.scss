@@ -23,3 +23,14 @@
 		background-color: v.$color-ascent-yellow;
 	}
 }
+
+@media (max-width: 720px) {
+	.titleCard {
+		font-size: v.$fs16;
+	}
+
+	.descriptionCard {
+		margin-bottom: 10px;
+		font-size: 12px;
+	}
+}

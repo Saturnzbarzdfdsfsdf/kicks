@@ -1,11 +1,15 @@
-import styles from './index.module.scss'
-
+import { useSmoothScrollContext } from 'src/app/context/SmoothScrollProvider'
 import logoBig from '../../assets/images/logo-big.png'
+
 import logoMedium from '../../assets/images/logo-medium.png'
 
+import styles from './index.module.scss'
+
 const Footer = () => {
+const {registerSectionRef} = useSmoothScrollContext()
+
 	return (
-		<footer className={styles.footer}>
+		<footer ref={registerSectionRef('About')} className={styles.footer}>
 			<div className={styles.container}>
 				<div className={styles.footer__outer}>
 					<h3 className={styles.footer__outer_title}>
@@ -24,8 +28,8 @@ const Footer = () => {
 						<input className={styles.fieldset__input_btn} type='submit' />
 					</fieldset>
 
-					<a href='' className={styles.footer__outer_logo}>
-						<img src={logoMedium} alt='logo' />
+					<a href='/' className={styles.footer__outer_logo}>
+						<img className={styles.logo} src={logoMedium} alt='logo' />
 					</a>
 
 					<div className={styles.footer__inner}>
@@ -49,15 +53,7 @@ const Footer = () => {
 								<li>
 									<a href='#'>Basketball</a>
 								</li>
-								<li>
-									<a href='#'>Outdoor</a>
-								</li>
-								<li>
-									<a href='#'>Golf</a>
-								</li>
-								<li>
-									<a href='#'>Hiking</a>
-								</li>
+
 							</ul>
 
 							<ul className={styles.footer__inner_ul}>

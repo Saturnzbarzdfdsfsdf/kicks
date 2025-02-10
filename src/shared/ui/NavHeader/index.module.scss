@@ -1,0 +1,62 @@
+@use '../../scss/base/variables' as v;
+
+.nav {
+	background-color: v.$color-white-255;
+	padding: 10px;
+	z-index: 100;
+    font-size: 20px;
+	transition: background-color 0.3s ease;
+
+	&.sticky {
+		background-color: rgba(99, 99, 99, 0);
+		border-radius: v.$br8;
+	}
+
+	&__list {
+		display: flex;
+		gap: 20px;
+		font-weight: 500;
+
+		&_link {
+			padding: 10px;
+			border-radius: v.$br8;
+
+			&.sticky {
+				background-color: rgba(0, 0, 0, 0.3);
+				color: v.$color-white-255;
+			}
+
+			&:hover {
+				background-color: v.$color-ascent-blue;
+				color: v.$color-white-255;
+			}
+		}
+
+		&_button {
+			cursor: pointer;
+			background-color: v.$color-white-255;
+			padding: 10px;
+			border-radius: v.$br8;
+
+			&.sticky {
+				background-color: rgba(148, 148, 148, 0.7);
+				color: v.$color-white-255;
+			}
+
+			&:hover {
+				background-color: v.$color-ascent-yellow;
+				color: v.$color-white-255;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1080px) {
+	
+.nav {
+	font-size: v.$fs16;
+}
+}
+
+

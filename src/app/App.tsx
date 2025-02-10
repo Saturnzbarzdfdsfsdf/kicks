@@ -1,12 +1,12 @@
-import { Routes } from 'react-router'
-import { HomePage } from '../page'
-
 import AppRouter from './routers/Routes'
+import { SmoothScrollProvider } from './context/SmoothScrollProvider'
 
 const App = () => {
 	return (
 		<>
-			<AppRouter />
+			<SmoothScrollProvider>
+				<AppRouter />
+			</SmoothScrollProvider>
 		</>
 	)
 }

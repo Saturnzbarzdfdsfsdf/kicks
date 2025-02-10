@@ -1,0 +1,24 @@
+@use '../../scss/base/variables' as v;
+
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background-color: v.$color-ascent-blue;
+  color: v.$color-white-255;
+  transition: v.$transition-base;
+
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: v.$color-ascent-yellow;
+  }
+}

@@ -1,9 +1,5 @@
 @use '../../shared/scss/base/variables' as v;
 
-.main {
-	flex: 1;
-}
-
 .container {
 	margin: 0 auto;
 	max-width: v.$max-width;

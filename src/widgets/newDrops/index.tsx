@@ -10,14 +10,18 @@ import type { IProducts } from 'src/entities/Product/model/types'
 import 'swiper/swiper-bundle.css'
 import styles from './index.module.scss'
 
+
 interface IPropsNewDrop {
 	title: string
 	products: IProducts[]
 }
 
 const Index: FC<IPropsNewDrop> = ({ title, products }) => {
+
+
+
 	return (
-		<section className={styles.newDrop}>
+		<section   className={styles.newDrop}>
 			<div className={styles.newDropTop}>
 				<h2 className={styles.title2}>{title}</h2>
 				<Link className={styles.desc} to='new'>

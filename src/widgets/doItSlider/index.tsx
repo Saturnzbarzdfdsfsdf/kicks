@@ -1,6 +1,12 @@
 import React, { useState, useRef } from 'react'
+import { Link } from 'react-router'
+
+import { useSmoothScrollContext } from 'src/app/context/SmoothScrollProvider'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
+
 import { EffectFade } from 'swiper/modules'
+
 import SwiperCore from 'swiper'
 
 import slide1 from '../../shared/assets/images/generated_image.jpg'
@@ -8,12 +14,12 @@ import slide2 from '../../shared/assets/images/nikeSlider2.png'
 import slide3 from '../../shared/assets/images/nikeSlider3.jpg'
 
 import styles from './index.module.scss'
-import { Link } from 'react-router'
 
 const Index: React.FC = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
-	const swiperRef = useRef<SwiperCore>(null)
 
+	const swiperRef = useRef<SwiperCore>(null)
+	const { registerSectionRef } = useSmoothScrollContext()
 	const slides = [
 		{
 			id: 1,
@@ -42,15 +48,12 @@ const Index: React.FC = () => {
 
 	return (
 		<section className={styles.doIt}>
-			<h1 className={styles.title}>
-				Do it <span>right</span>
-			</h1>
-
 			<div className={styles.firstSwiper}>
 				<Swiper
 					effect='fade'
 					fadeEffect={{ crossFade: true }}
 					speed={800}
+					// autoplay={{ delay: 3000 }}
 					modules={[EffectFade]}
 					initialSlide={currentSlide}
 					onSwiper={swiper => (swiperRef.current = swiper)}
@@ -89,9 +92,12 @@ const Index: React.FC = () => {
 					))}
 				</div>
 			</div>
+
+			<h1 ref={registerSectionRef('Do it')} className={styles.title}>
+				Do it <span>right</span>
+			</h1>
 		</section>
 	)
 }
 
 export default Index
-

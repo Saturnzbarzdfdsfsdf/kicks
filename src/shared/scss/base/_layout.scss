@@ -1,13 +1,9 @@
 @use '../base/variables' as v;
 
 body {
-	display: flex;
-	flex-direction: column;
 	background-color: v.$color-gray-light;
 
-	min-height: 100vh;
 	font-size: v.$fs16;
 	font-family: v.$ffRubik;
 	color: v.$color-dark;
 }
-

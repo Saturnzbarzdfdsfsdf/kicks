@@ -1,4 +1,3 @@
-// src/features/search/model/filterSelectors.ts
 import { createSelector } from '@reduxjs/toolkit'
 import { selectProducts } from 'src/entities/Product/model/selectors'
 import type { RootState } from 'src/app/store'
