@@ -1,50 +1,79 @@
+@use '../../shared/scss/base/variables' as v;
+
 .mobileHeader {
-  position: relative; /* Чтобы меню позиционировалось относительно хедера */
-  background-color: #f0f0f0;
-  padding: 10px;
-  z-index: 1000;
-  border-radius: 24px;
+	position: relative;
+	padding: 10px;
+	z-index: 1000;
+	border-radius: 24px;
+	background-color: v.$color-white-255;
+
+	&__top {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+
+		&_burger {
+			text-align: left;
+			background: none;
+			font-size: 45px;
+			width: 100%;
+			padding: 10px;
+			border-radius: v.$br8;
+
+			cursor: pointer;
+		}
+
+		&_search {
+			margin-right: 30px;
+		}
+	}
 }
 
 .menuButton {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px;
+	cursor: pointer;
+	background: none;
+	// border: none;
+	font-size: 20px;
+	padding: 5px;
 }
 
 .menu {
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  width: 100%;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10; 
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 24px;
-  gap: 5px;
+	position: absolute;
+	display: flex;
+
+	top: 100%;
+	left: 0;
+	width: 100%;
+
+	background-color: transparent;
+	backdrop-filter: blur(10px);
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 10;
+	padding: 10px;
+	flex-direction: column;
+	border-radius: 12px;
+	gap: 5px;
 }
 
 .menuLink {
-  display: block;
-  padding: 5px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 1px solid #eee;
+	display: block;
+	padding: 5px;
+	font-size: 30px;
+	text-decoration: none;
+	color: black;
+	border-bottom: 1px solid #eee;
 }
 
 .menuButton {
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  width: 100%;
-  padding: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
+	display: block;
+	text-align: left;
+	font-size: 30px;
+	padding: 5px;
+
+	&:hover {
+		background-color: v.$color-ascent-yellow;
+		border-radius: 8px;
+	}
 }

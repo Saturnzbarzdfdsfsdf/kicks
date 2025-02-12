@@ -11,7 +11,7 @@ import './shared/scss/main.scss'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<BrowserRouter>
+		<BrowserRouter basename='/kicks'>
 			<Provider store={store}>
 				<App />
 			</Provider>

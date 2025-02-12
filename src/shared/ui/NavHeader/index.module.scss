@@ -51,11 +51,22 @@
 	}
 }
 
+@media (max-width: 1120px) {
+	
+.nav {
+	font-size: v.$fs16;
+}
+}
 
 @media (max-width: 1080px) {
 	
 .nav {
-	font-size: v.$fs16;
+	font-size: v.$fs14;
+
+
+	&__list {
+		gap: 5px;
+	}
 }
 }
 

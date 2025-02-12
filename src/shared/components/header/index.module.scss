@@ -130,15 +130,20 @@
 	}
 }
 
-/* Триггер-зона – прозрачный блок в верхней части экрана */
+//Триггер-зона – прозрачный блок в верхней части экрана 
 .headerTrigger {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 50px; /* Вы можете задать нужную высоту */
+	height: 50px;
 	background: transparent;
 	z-index: 900;
 	pointer-events: auto;
 }
 
+@media (max-width: 1080px) {
+	.header__logo {
+		padding-right: 50px;
+	}
+}

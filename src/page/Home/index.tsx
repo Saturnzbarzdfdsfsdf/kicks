@@ -27,12 +27,14 @@ const index = () => {
 	if (loading) return <div>Loading...</div>
 
 	return (
+		<>
 		<div className={styles.container}>
 			<DoItSlider />
 			<NewDrops products={products} title='New Drops' />
-			<CategoriesSlider />
 			<Reviews />
 		</div>
+			<CategoriesSlider />
+		</>
 	)
 }
 

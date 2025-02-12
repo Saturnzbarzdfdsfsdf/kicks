@@ -7,7 +7,8 @@
 
 .title {
 	font-family: v.$ffRubik;
-	font-size: 223.5px;
+	font-size: 14rem;
+	text-wrap: nowrap;
 	font-weight: 700;
 	line-height: 265px;
 	text-align: center;
@@ -24,8 +25,8 @@
 	overflow: hidden;
 	margin: 0 auto;
 
-	width: 1320px;
-	height: 830px;
+	max-width: 82.5rem;
+	height: 51rem;
 
 	border-radius: v.$br64;
 }
@@ -110,7 +111,38 @@
 		max-width: 1230px;
 	}
 	.title {
-		font-size: 200px;
+		font-size: 12.5rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	.firstSwiper {
+		max-width: 1230px;
+		max-height: 800px;
+	}
+
+	.miniSlide {
+		bottom: 40px;
+		right: 40px;
+		gap: 5px;
+	}
+
+
+}
+@media (max-width: 1115px) {
+	.firstSwiper {
+		max-width: 1230px;
+		max-height: 725px;
+	}
+
+	.miniSlide {
+		bottom: 40px;
+		right: 40px;
+		gap: 5px;
+	}
+
+	.title {
+		font-size: 170px;
 	}
 }
 
@@ -118,9 +150,6 @@
 	.firstSwiper {
 		max-width: 1030px;
 		max-height: 650px;
-	}
-	.title {
-		font-size: 200px;
 	}
 
 	.mainSlide {
@@ -160,14 +189,79 @@
 	}
 }
 
+
+@media (max-width: 1080px) {
+	.firstSwiper {
+		max-width: 1030px;
+		max-height: 515px;
+	}
+
+	.miniSlide {
+		bottom: 30px;
+		right: 30px;
+		gap: 5px;
+	}
+
+	.sliderContent {
+		bottom: 260px;
+
+		h2 {
+			font-size: 65px;
+		}
+
+		p {
+			font-size: v.$fs16;
+		}
+	}
+
+	.title {
+		font-size: 8rem;
+	}
+
+	.doIt {
+		padding-bottom: 30px;
+	}
+
+}
+
+@media (max-width: 780px) {
+	.firstSwiper {
+		max-width: 730px;
+		max-height: 475px;
+	}
+
+	.miniSlide {
+		bottom: 30px;
+		right: 30px;
+		gap: 5px;
+	}
+
+	.sliderContent {
+		bottom: 270px;
+
+		h2 {
+			font-size: 55px;
+		}
+
+		p {
+			font-size: v.$fs16;
+		}
+	}
+
+	.title {
+		font-size: 7rem;
+	}
+}
+
+
 @media (max-width: 720px) {
 	.firstSwiper {
 		max-width: 630px;
 		max-height: 420px;
 	}
-	.title {
-		font-size: 200px;
-	}
+	// .title {
+	// 	font-size: 200px;
+	// }
 
 	.mainSlide {
 		width: 100%;
@@ -207,8 +301,65 @@
 		}
 	}
 
+	// .title {
+	// 	font-size: 110px;
+	// }
+
+	.doIt {
+		padding-bottom: 10px;
+	}
+}
+
+@media (max-width: 430px) {
+	.firstSwiper {
+		max-width: 400px;
+		max-height: 270px;
+		border-radius: v.$br40;
+	}
 	.title {
-		font-size: 110px;
+		font-size: 4rem;
+		line-height: 12rem;
+	}
+
+	.mainSlide {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.miniSlide {
+		bottom: 20px;
+		right: 20px;
+		gap: 5px;
+	}
+
+	.miniSlideImg {
+		width: 65px;
+		height: 65px;
+		opacity: 0.8;
+		border-radius: v.$br28;
+		margin-bottom: 6px;
+	}
+
+	.sliderContent {
+		bottom: 130px;
+		left: 20px;
+
+		h2 {
+			font-size: 35px;
+			line-height: v.$lh38;
+			// margin-bottom: 0px;
+		}
+
+		p {
+			font-size: 0.7rem;
+			max-width: 18rem;
+			margin-bottom: 10px;
+		}
+
+		a {
+			@include mixins.btn-main(5px 15px, v.$color-dark);
+		}
 	}
 
 	.doIt {

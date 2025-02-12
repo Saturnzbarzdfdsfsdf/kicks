@@ -1,0 +1,176 @@
+@use '../../shared/scss/base/variables' as v;
+@use '../../shared/scss/base/mixins';
+
+.container {
+	@include mixins.baseContainer;
+}
+
+.shipping {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: v.$header-width;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+	&__right {
+		min-width: 31rem;
+	}
+}
+
+.contact {
+	color: v.$color-dark;
+
+	&__details_title {
+		font-size: v.$fs32;
+		line-height: v.$lh38;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	&__details_description {
+		font-family: v.$ffOpenSans;
+		font-weight: 600;
+		margin-bottom: 2rem;
+	}
+
+	&__details_input {
+		border: 1px solid v.$color-dark;
+		border-radius: v.$br8;
+		background-color: v.$color-gray-light;
+		padding: 10px 16px 10px 16px;
+		min-width: 21rem;
+		transition: v.$transition-base;
+
+		&:focus,
+		&:hover {
+			background-color: v.$color-white-250;
+		}
+
+		&::placeholder {
+			color: v.$color-gray-main;
+		}
+	}
+}
+
+.address {
+	color: v.$color-dark;
+	&__title {
+		font-size: v.$fs32;
+		line-height: v.$lh38;
+		margin-bottom: 2rem;
+		font-weight: 600;
+	}
+
+	&__fieldset {
+		max-width: 43rem;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		&_top {
+			display: flex;
+			gap: 10px;
+		}
+	}
+
+	&__input {
+		cursor: pointer;
+		width: 100%;
+		border: 1px solid v.$color-dark;
+		border-radius: v.$br8;
+		padding: 10px 16px 10px 16px;
+		background-color: v.$color-gray-light;
+		transition: v.$transition-base;
+
+		&:focus,
+		&:hover {
+			background-color: v.$color-white-250;
+		}
+
+		&::placeholder {
+			color: v.$color-gray-main;
+			letter-spacing: 0.5px;
+			font-weight: 400;
+		}
+	}
+}
+
+.delivery__options {
+	display: flex;
+	flex-direction: column;
+	gap: 1.3rem;
+	color: v.$color-dark;
+
+	&_title {
+		font-size: v.$fs32;
+		line-height: v.$lh38;
+		font-weight: 600;
+
+		margin-bottom: 1rem;
+	}
+
+	&_option {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		border: 1px solid v.$color-dark;
+		border-radius: 16px;
+		padding: 1rem;
+		transition: v.$transition-base;
+
+		&:hover {
+			background-color: v.$color-white-250;
+		}
+
+		&_title {
+			font-size: v.$fs24;
+			line-height: v.$lh28;
+			font-weight: 600;
+		}
+
+		&_description {
+			font-weight: 300;
+		}
+
+		&_price {
+			color: v.$color-ascent-blue;
+			font-size: v.$fs20;
+			line-height: v.$lh22;
+			font-weight: 600;
+		}
+	}
+}
+
+.checkboxes {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	color: v.$color-dark;
+
+	label {
+		cursor: pointer;
+	}
+	input {
+		margin-right: 10px;
+	}
+
+	p {
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	.submit {
+		@include mixins.btn-main;
+		transition: v.$transition-base;
+
+		&:hover {
+			background-color: v.$color-ascent-yellow;
+		}
+	}
+}

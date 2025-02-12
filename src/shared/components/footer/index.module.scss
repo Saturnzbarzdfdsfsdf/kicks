@@ -5,6 +5,8 @@
 .footer {
 	margin-bottom: 100px;
 	position: relative;
+	max-width: v.$header-width;
+	margin: 0 auto;
 }
 
 .footer__outer {
@@ -27,8 +29,7 @@
 		padding-left: 70px;
 		padding-bottom: 35px;
 
-
-		width: 590px;
+		max-width: 590px;
 	}
 
 	&_desc {
@@ -158,7 +159,73 @@
 	gap: 20px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1080px) {
+	.footer__outer {
+		width: 100%;
+		height: 500px;
+
+		.logo {
+			width: 300px;
+			margin-left: auto;
+		}
+
+		// &_title {
+		// 	font-size: v.$fs30;
+		// 	line-height: v.$lh38;
+		// 	font-weight: 600;
+
+		// 	padding-top: 55px;
+		// 	padding-left: 60px;
+		// 	margin-bottom: 15px;
+
+		// 	width: 490px;
+		// }
+
+		&_desc {
+			margin-bottom: 25px;
+			padding-left: 60px;
+		}
+
+		&_logo {
+			right: 10%;
+			top: 60px;
+		}
+	}
+
+	.fieldset {
+		padding-left: 60px;
+	}
+
+	.footer__inner {
+		height: 400px;
+		bottom: -250px;
+		&_nav {
+			display: flex;
+			justify-content: space-between;
+			font-size: v.$fs14;
+			gap: 20px;
+			margin: 40px;
+
+			&:last-child {
+				flex-wrap: nowrap;
+			}
+		}
+
+		&_logo {
+			position: absolute;
+			bottom: -100px;
+			right: -20px;
+		}
+
+		&_ul li:first-child {
+			width: 110px;
+			margin-bottom: 10px;
+			font-size: v.$fs16;
+		}
+	}
+}
+
+@media (max-width: 980px) {
 	.footer__outer {
 		width: 100%;
 		height: 500px;
@@ -224,15 +291,96 @@
 	}
 }
 
+@media (max-width: 430px) {
+	.footer__outer {
+		width: 100%;
+		height: 430px;
+
+		.logo {
+			max-width: 10rem;
+			margin-left: auto;
+		}
+
+		&_title {
+			font-size: v.$fs16;
+			line-height: v.$lh28;
+			font-weight: 600;
+
+			padding-top: 45px;
+			padding-left: 30px;
+			margin-bottom: 0.6rem;
+			padding-bottom: 1rem;
+
+			max-width: 300px;
+		}
+
+		&_desc {
+			font-size: 0.9rem;
+			margin-bottom: 1rem;
+			padding-left: 30px;
+		}
+
+		&_logo {
+			right: 10%;
+			top: 40px;
+		}
+	}
+
+	.fieldset {
+		padding-left: 30px;
+
+		&__input {
+			cursor: pointer;
+			font-size: v.$fs14;
+			border-radius: v.$br8;
+			transition: v.$transition-base;
+			background-color: transparent;
+			border: 2px solid v.$color-white-255;
+
+			padding: 20px;
+			max-width: 16rem;
+			height: 2rem;
+
+			&_btn {
+				@include mixins.btn-main(13px 15px, v.$color-dark);
+			}
+		}
+	}
+
+	.footer__inner {
+		&_logo {
+			bottom: -20px;
+			right: -20px;
+		}
+	}
+}
+
 .create {
 	font-size: v.$fs20;
 	font-weight: 500;
 
-	bottom: -480px;
+	bottom: -460px;
 	left: 50%;
 	padding: 10px;
 }
 
 .social li {
 	gap: 20px;
+}
+
+
+@media (max-width: 430px) {
+	.create {
+	font-size: v.$fs14;
+	font-weight: 500;
+	text-wrap: nowrap;
+
+	bottom: -240px;
+	left: 50%;
+	padding: 10px;
+}
+
+.social li {
+	gap: 20px;
+}
 }

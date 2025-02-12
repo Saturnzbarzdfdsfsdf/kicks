@@ -34,3 +34,8 @@
 		font-size: 12px;
 	}
 }
+@media (max-width: 430px) {
+ .sliderBtn {
+	@include mixins.btn-main(15px 30px, v.$color-dark);
+}
+}

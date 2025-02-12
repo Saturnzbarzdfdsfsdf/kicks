@@ -64,3 +64,8 @@
 	}
 }
 
+@mixin baseContainer {
+	margin: 0 auto;
+	max-width: v.$max-width;
+	padding: v.$container-padding;
+}

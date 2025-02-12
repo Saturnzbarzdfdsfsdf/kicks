@@ -25,7 +25,8 @@ const {registerSectionRef} = useSmoothScrollContext()
 							type='text'
 							placeholder='Placeholder'
 						/>
-						<input className={styles.fieldset__input_btn} type='submit' />
+						<input className={styles.fieldset__input_btn} 
+						value={'Sign up'} type='submit' />
 					</fieldset>
 
 					<a href='/' className={styles.footer__outer_logo}>
@@ -75,18 +76,18 @@ const {registerSectionRef} = useSmoothScrollContext()
 									<li>
 										<a href='#'>
 											<img
-												src='./src/assets/icon/facebook.svg'
+												// src='./src/assets/icon/facebook.svg'
 												alt='facebook'
 											/>
 										</a>
 										<a href='#'>
 											<img
-												src='./src/assets/icon/instagram.svg'
+												// src='./src/assets/icon/instagram.svg'
 												alt='instagram'
 											/>
 										</a>
 										<a href='#'>
-											<img src='./src/assets/icon/twitter.svg' alt='twitter' />
+											{/* <img src='./src/assets/icon/twitter.svg' alt='twitter' /> */}
 										</a>
 									</li>
 								</ul>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { CartCard } from '../../index'
 import { NewDrops } from 'src/widgets'
 
@@ -22,13 +23,11 @@ const Cart = () => {
 	return (
 		<div className={styles.cart}>
 			{cartItems.length === 0 ? (
-				// Render this if cart is empty
 				<div className={styles.emptyCart}>
 					<h2>Your cart is empty</h2>
 					<p>Add products to your cart to proceed to checkout.</p>
 				</div>
 			) : (
-				// Render this if cart is not empty
 				<>
 					<div className={styles.cart__top}>
 						<div className={styles.cart__top_info}>
@@ -42,6 +41,7 @@ const Cart = () => {
 					</div>
 
 					<div className={styles.cart__content}>
+						
 						<div className={styles.cart__content_card}>
 							<CartCard cartItems={cartItems} />
 
@@ -58,9 +58,12 @@ const Cart = () => {
 									<span>${(totalPrice / 100).toFixed(2)}</span>
 								</div>
 
-								<a href='#' className={styles.cart__content_order_btn}>
+								<Link
+									to='/cart/shipping'
+									className={styles.cart__content_order_btn}
+								>
 									pay
-								</a>
+								</Link>
 							</div>
 						</div>
 

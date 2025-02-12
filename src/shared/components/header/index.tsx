@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import { useAppSelector } from 'src/app/Hook'
 import { selectTotalItems } from 'src/features/cart/model/selectors'
 import { NavHeader } from 'src/shared/ui/index'
-import { HeaderMini } from 'src/widgets'
 
 import logo from '../../assets/images/Logo.png'
 import User from '../../assets/icon/User.svg'

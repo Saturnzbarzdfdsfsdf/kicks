@@ -9,10 +9,10 @@ import useMediaQuery from 'src/shared/hooks/useMediaQuery'
 
 const index = () => {
 	
-	const isMobile = useMediaQuery('(max-width: 768px)')
+	const isMobile = useMediaQuery('(max-width: 800px)')
 
 	return (
-		<div className={styles.container}>
+		<div>
 			{isMobile ? <HeaderMini /> : <Header />}
 			<ScrollToTop />
 
