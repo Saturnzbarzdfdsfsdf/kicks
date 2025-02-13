@@ -99,3 +99,11 @@
 	font-size: 1.5em; 
 	color: rgba(0, 0, 0, 0.438); 
 }
+
+
+@media (max-width:430px) {
+	.product {
+		max-width: 410px;
+		padding: 20px;
+	}
+}

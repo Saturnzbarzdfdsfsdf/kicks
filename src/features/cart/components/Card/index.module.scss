@@ -2,121 +2,148 @@
 @use '../../../../shared/scss/base/mixins';
 
 .cartCardContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 50px;
 }
 
 .cartCard {
-  width: 750px;
-  height: 420px;
-  background-color: v.$color-white-250;
-  border-radius: v.$br28;
-  padding: 24px;
-  font-family: v.$ffOpenSans;
-  margin-bottom: 20px;
+	max-width: 750px;
+	max-height: 420px;
+	background-color: v.$color-white-250;
+	border-radius: v.$br28;
+	padding: 24px;
+	font-family: v.$ffOpenSans;
+	margin-bottom: 20px;
 
-  &__top {
-    margin-bottom: 20px;
+	&__top {
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		font-size: v.$fs40;
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+
+	&__description {
+		color: v.$color-dark;
+		font-size: v.$fs16;
+		line-height: v.$lh22;
+		font-weight: 400;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__link {
+		margin-right: 20px;
+	}
+
+	&__image {
+		width: 220px;
+		height: 230px;
+		border-radius: 25px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-left: 30px;
+		margin-right: auto;
+
+		&Title {
+			color: v.$color-dark;
+			font-size: v.$fs20;
+			font-weight: 600;
+			line-height: v.$lh28;
+		}
+
+		&Description {
+			margin-bottom: 10px;
+		}
+
+		&Size {
+			display: flex;
+			gap: 20px;
+			color: v.$color-gray-main;
+			font-size: v.$fs16;
+			line-height: v.$lh22;
+			font-weight: 600;
+		}
+
+		&Quantity {
+			display: flex;
+			gap: 10px;
+			margin-top: auto;
+			align-items: center;
+		}
+	}
+
+	&__quantityButton {
+		@include mixins.btn_main(10px 13px, v.$color-dark);
+
+		&:hover {
+			background-color: v.$color-ascent-yellow;
+		}
+	}
+
+	&__quantityValue {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	&__actions {
+		display: flex;
+		gap: 10px;
+		margin-top: 10px;
+	}
+
+	&__actionButton {
+		cursor: pointer;
+		background-color: inherit;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__price {
+		color: v.$color-ascent-blue;
+		font-family: v.$ffRubik;
+		font-size: v.$fs20;
+		line-height: v.$lh22;
+		font-weight: 600;
+	}
+}
+
+@media (max-width: 412px) {
+
+	.cartCard {
+		max-width: 410px;
+		padding: 20px;
+
+
+  &__contentDescription {
+    margin-bottom: 0px;
   }
 
-  &__title {
-    font-size: v.$fs40;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
+		&__image {
+			width: 160px;
+			height: 160px;
+		}
 
-  &__description {
-    color: v.$color-dark;
-    font-size: v.$fs16;
-    line-height: v.$lh22;
-    font-weight: 400;
-  }
+		&__content {
+			gap: 10px;
+			margin-left: 10px;
+		}
 
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__link {
-    margin-right: 20px; 
-  }
-
-  &__image {
-    width: 220px;
-    height: 230px;
-    border-radius: 25px;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-left: 30px;
-    margin-right: auto;
-
-    &Title {
-      color: v.$color-dark;
-      font-size: v.$fs20;
-      font-weight: 600;
-      line-height: v.$lh28;
-    }
-
-    &Description {
-      margin-bottom: 10px;
-    }
-
-    &Size {
-      display: flex;
-      gap: 20px;
-      color: v.$color-gray-main;
-      font-size: v.$fs16;
-      line-height: v.$lh22;
-      font-weight: 600;
-    }
-
-    &Quantity {
-      display: flex;
-      gap: 10px;
-      margin-top: auto;
-      align-items: center;
-    }
-  }
-
-  &__quantityButton {
-    @include mixins.btn_main(10px 13px, v.$color-dark);
-
-    &:hover {
-      background-color: v.$color-ascent-yellow;
-    }
-  }
-
-  &__quantityValue {
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  &__actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  &__actionButton {
-    cursor: pointer;
-    background-color: inherit;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__price {
-    color: v.$color-ascent-blue;
-    font-family: v.$ffRubik;
-    font-size: v.$fs20;
-    line-height: v.$lh22;
-    font-weight: 600;
-  }
+		&__quantityButton {
+			padding: 5px 10px;
+		}
+	}
 }

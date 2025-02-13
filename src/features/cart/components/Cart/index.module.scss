@@ -59,3 +59,12 @@
 		flex-direction: column;
 	}
 }
+
+
+@media (max-width: 412px) {
+	.cart__content_card {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 2rem;
+	}
+}

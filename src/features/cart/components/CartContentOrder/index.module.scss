@@ -12,8 +12,8 @@
 	background-color: v.$color-white-250;
 	color: v.$color-dark;
 
-	max-width: 550px;
-	height: 420px;
+	width: 500px;
+	height: 390px;
 
 	&_info {
 		display: flex;
@@ -43,6 +43,11 @@
 
 @media (max-width: 430px) {
 	.cart__content_order {
-		max-width: 420px;
+		width: 405px;
 	}
 }
+// @media (max-width: 412px) {
+// 	.cart__content_order {
+// 		width: 420px;
+// 	}
+// }

@@ -6,6 +6,16 @@
 	z-index: 1000;
 	border-radius: 24px;
 	background-color: v.$color-white-255;
+	transition: all 0.5s ease;
+	&.visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&.hidden {
+		opacity: 0;
+		pointer-events: auto;
+	}
 
 	&__top {
 		display: flex;
@@ -24,8 +34,24 @@
 		}
 
 		&_search {
+			margin-left: 30px;
 			margin-right: 30px;
 		}
+	}
+}
+
+.header__cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: v.$color-ascent-yellow;
+	width: v.$w37;
+	height: v.$h37;
+	border-radius: v.$br50;
+
+	p {
+		font-weight: 600;
+		font-family: v.$ffOpenSans;
 	}
 }
 
@@ -75,6 +101,32 @@
 		background-color: v.$color-ascent-yellow;
 		border-radius: 8px;
 	}
+}
+
+// Класс sticky применяется, когда скролл превышает заданный порог
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	// margin-top: 10px;
+
+	.header__top {
+		background-color: rgba(75, 75, 75, 0.6);
+	}
+}
+
+//Триггер-зона – прозрачный блок в верхней части экрана
+.headerTrigger {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: transparent;
+	z-index: 900;
+	pointer-events: auto;
 }
 
 @media (max-width: 800px) {

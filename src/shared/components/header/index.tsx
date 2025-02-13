@@ -14,10 +14,10 @@ import useHeaderVisibility from 'src/shared/hooks/useHeaderVisibility'
 import styles from './index.module.scss'
 
 const Header = () => {
-	const totalItems = useAppSelector(selectTotalItems)
 	const headerRef = useRef<HTMLDivElement>(null)
+	const [headerHeight, setHeaderHeight] = useState(0)
 	const isSticky = useSticky(250)
-
+	
 	const {
 		visible: autoVisible,
 		handleMouseEnter,
@@ -25,8 +25,8 @@ const Header = () => {
 		handleFocus,
 		handleBlur,
 	} = useHeaderVisibility(1200)
-
-	const [headerHeight, setHeaderHeight] = useState(0)
+	
+	const totalItems = useAppSelector(selectTotalItems)
 
 	// Определяем высоту хедера для placeholder
 	useEffect(() => {
@@ -97,6 +97,7 @@ const Header = () => {
 			{isSticky && (
 				<div className={styles.headerTrigger} onMouseEnter={handleMouseEnter} />
 			)}
+			
 		</>
 	)
 }
