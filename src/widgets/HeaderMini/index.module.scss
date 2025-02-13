@@ -12,7 +12,6 @@
 		justify-content: space-around;
 		align-items: center;
 
-
 		&_burger {
 			text-align: left;
 			background: none;
@@ -75,5 +74,15 @@
 	&:hover {
 		background-color: v.$color-ascent-yellow;
 		border-radius: 8px;
+	}
+}
+
+@media (max-width: 800px) {
+	.mobileHeader {
+		border-radius: 0px;
+	}
+
+	.menu {
+		border-radius: 0px;
 	}
 }

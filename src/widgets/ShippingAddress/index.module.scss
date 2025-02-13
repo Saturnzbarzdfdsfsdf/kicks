@@ -19,7 +19,8 @@
 		gap: 30px;
 	}
 	&__right {
-		min-width: 31rem;
+		max-width: 31rem;
+		margin: 0 auto;
 	}
 }
 
@@ -172,5 +173,14 @@
 		&:hover {
 			background-color: v.$color-ascent-yellow;
 		}
+	}
+}
+
+
+@media (max-width: 430px) {
+	.shipping {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 30px;
 	}
 }

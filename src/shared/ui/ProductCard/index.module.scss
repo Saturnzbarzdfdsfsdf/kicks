@@ -7,6 +7,7 @@
 
 .swiperWrapper a img {
 	border: 8px solid white;
+	
 	border-radius: 40px;
 	margin-bottom: 16px;
 	transition: v.$transition-base;
@@ -45,21 +46,17 @@
 	display: flex;
 	gap: 5px;
 	max-width: 316px;
-
-	
 }
 
 .sliderBtn {
 	@include mixins.btn-main(14px 30px, v.$color-dark);
 
 	&:first-child {
-	flex: 1;
-	margin-right: auto; 
+		flex: 1;
+		margin-right: auto;
 	}
 }
 
 .sliderBtn:hover {
 	background-color: v.$color-ascent-yellow;
 }
-
-

@@ -27,13 +27,13 @@ const Index: FC<TPropsProductCard> = ({ product }) => {
 					</Link>
 
 					<div className={styles.btnBox}>
-						<a
+						<Link
+							onClick={() => handleAddToCart(product)}
+							to='/cart/shipping'
 							className={styles.sliderBtn}
-							href='#'
-							onClick={e => e.preventDefault()}
 						>
 							buy
-						</a>
+						</Link>
 						<button
 							className={styles.sliderBtn}
 							onClick={() => handleAddToCart(product)}

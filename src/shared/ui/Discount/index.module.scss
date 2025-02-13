@@ -9,7 +9,6 @@
 
 		&_title {
 			color: v.$color-white-255;
-			font-family: Rubik;
 			font-size: v.$fs74;
 			font-weight: 600;
 			line-height: v.$lh88;
@@ -29,5 +28,11 @@
 	img {
 		margin-top: 80px;
 		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 430px) {
+	.top {
+		display: none;
 	}
 }

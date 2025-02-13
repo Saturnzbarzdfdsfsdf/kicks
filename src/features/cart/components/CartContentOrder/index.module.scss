@@ -1,0 +1,48 @@
+@use '../../../../shared/scss/base/variables' as v;
+@use '../../../../shared/scss/base/mixins';
+
+.cart__content_order {
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+	padding: 30px;
+
+	border-radius: v.$br28;
+	background-color: v.$color-white-250;
+	color: v.$color-dark;
+
+	max-width: 550px;
+	height: 420px;
+
+	&_info {
+		display: flex;
+		justify-content: space-between;
+		font-family: v.$ffOpenSans;
+		font-size: v.$fs20;
+		line-height: v.$lh22;
+		font-weight: 600;
+	}
+
+	&_title {
+		font-size: v.$fs30;
+		color: v.$color-dark;
+		line-height: v.$lh38;
+		font-family: v.$ffRubik;
+		font-weight: 600;
+	}
+
+	&_btn {
+		@include mixins.btn-main(14px 70px, v.$color-dark);
+
+		&:hover {
+			background-color: v.$color-ascent-yellow;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	.cart__content_order {
+		max-width: 420px;
+	}
+}

@@ -1,24 +1,16 @@
-import { Link } from 'react-router'
 import { CartCard } from '../../index'
 import { NewDrops } from 'src/widgets'
+
+import { CartContentOrder } from '../index'
 
 import styles from './index.module.scss'
 import { useAppSelector } from 'src/app/Hook'
 import { selectProducts } from 'src/entities/Product/model/selectors'
-import {
-	selectCartItems,
-	selectTotalItems,
-	selectTotalPrice,
-} from '../../model/selectors'
+import { selectCartItems } from '../../model/selectors'
 
 const Cart = () => {
-
 	const products = useAppSelector(selectProducts)
 	const cartItems = useAppSelector(selectCartItems)
-	
-	const totalPrice = useAppSelector(selectTotalPrice)
-	const totalItems = useAppSelector(selectTotalItems)
-
 
 	return (
 		<div className={styles.cart}>
@@ -41,30 +33,10 @@ const Cart = () => {
 					</div>
 
 					<div className={styles.cart__content}>
-						
 						<div className={styles.cart__content_card}>
 							<CartCard cartItems={cartItems} />
 
-							<div className={styles.cart__content_order}>
-								<h5 className={styles.cart__content_order_title}>
-									Order Summary
-								</h5>
-								<div className={styles.cart__content_order_info}>
-									<p>{totalItems} ITEM</p>
-									<span>${totalPrice}</span>
-								</div>
-								<div className={styles.cart__content_order_info}>
-									<p>Delivery</p>
-									<span>${(totalPrice / 100).toFixed(2)}</span>
-								</div>
-
-								<Link
-									to='/cart/shipping'
-									className={styles.cart__content_order_btn}
-								>
-									pay
-								</Link>
-							</div>
+							<CartContentOrder showPayButton={true} />
 						</div>
 
 						<NewDrops products={products} title='You may also like' />

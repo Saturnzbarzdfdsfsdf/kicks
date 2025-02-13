@@ -50,6 +50,7 @@ const Index: React.FC = () => {
 		<section className={styles.doIt}>
 			<div className={styles.firstSwiper}>
 				<Swiper
+					// loop={true}
 					effect='fade'
 					fadeEffect={{ crossFade: true }}
 					speed={800}

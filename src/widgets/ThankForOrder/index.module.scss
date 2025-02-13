@@ -1,0 +1,38 @@
+@use '../../shared/scss/base/variables' as v;
+
+.thankYou {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: v.$header-width;
+	border-radius: v.$br64;
+	background-color: v.$color-white-250;
+	padding: 20px;
+	margin: 20px auto;
+	height: 50vh;
+
+	div {
+		text-align: center;
+	}
+
+	&__title {
+		font-size: v.$fs48;
+		color: v.$color-dark;
+		margin-bottom: 1rem;
+	}
+
+	&__message {
+		font-size: v.$fs20;
+		color: v.$color-gray-main;
+margin-bottom: 1rem;
+	}
+
+	&__orderDetails {
+		font-size: v.$fs14;
+		color: v.$color-gray-main;
+	}
+
+  .smile {
+    font-size: v.$fs74;
+  }
+}

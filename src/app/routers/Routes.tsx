@@ -8,7 +8,7 @@ import {
 } from 'src/page'
 
 import { Cart } from '../../features/index'
-import { ShippingAddress } from 'src/widgets'
+import { ShippingAddress, ThankForOrder } from 'src/widgets'
 
 import Layout from '../layout'
 
@@ -20,6 +20,7 @@ const AppRouter = () => {
 				<Route path='cart' element={<Cart />} />
 				<Route path='new' element={<SneakersPage />} />
 				<Route path='/cart/shipping' element={<ShippingAddress />} />
+				<Route path='/cart/shipping/thanks' element={<ThankForOrder />} />
 				<Route path='single/:id' element={<SingleProductPage />} />
 				<Route path='*' element={<NotFoundPage />} />
 			</Route>

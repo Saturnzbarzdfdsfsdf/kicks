@@ -1,12 +1,13 @@
 import React from 'react'
 
-import styles from './index.module.scss'
-import { CartCard } from 'src/features/cart'
 import { selectCartItems } from 'src/features/cart/model/selectors'
 import { useAppSelector } from 'src/app/Hook'
+import { CartContentOrder } from 'src/features/cart/components'
+
+import styles from './index.module.scss'
+import { Link } from 'react-router-dom'
 
 const index = () => {
-
 	const cartItems = useAppSelector(selectCartItems)
 
 	return (
@@ -66,7 +67,9 @@ const index = () => {
 								Enter your address to see when you’ll get your order
 							</p>
 
-							<p className={styles.delivery__options_option_price}>$6.00</p>
+							<p className={styles.delivery__options_option_price}>
+								1% of the order
+							</p>
 						</div>
 
 						<div className={styles.delivery__options_option}>
@@ -105,16 +108,19 @@ const index = () => {
 							Yes, I’d like to receive emails about exclusive sales and more.
 						</label>
 
-						<input
-							type='submit'
-							value='place an order'
-							className={styles.submit}
-						/>
+						<Link to='thanks'>
+							<input
+								type='submit'
+								value='place an order'
+								className={styles.submit}
+							/>
+						</Link>
+						
 					</fieldset>
 				</div>
 
 				<div className={styles.shipping__right}>
-					<CartCard cartItems={cartItems} />
+					<CartContentOrder showPayButton={false} />
 				</div>
 			</div>
 		</div>

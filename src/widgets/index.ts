@@ -5,6 +5,7 @@ export { default as PriceFilter } from './PriceFilter/index'
 
 export { default as HeaderMini } from './HeaderMini/index'
 export { default as ShippingAddress } from './ShippingAddress/index'
+export { default as ThankForOrder } from './ThankForOrder/index'
 
 // SideBar
 export { default as SideBar } from './SideBar/index'

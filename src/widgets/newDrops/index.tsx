@@ -27,11 +27,11 @@ const Index: FC<IPropsNewDrop> = ({ title, products }) => {
 
 			<Swiper
 				className={styles.secondSwiper}
-				// loop={true}
+				loop={true}
 				speed={800}
 				modules={[Autoplay]}
 				// autoplay={{ delay: 6000 }}
-				spaceBetween={20}
+				spaceBetween={30}
 				slidesPerView={4}
 				breakpoints={{
 					640: {
@@ -43,6 +43,10 @@ const Index: FC<IPropsNewDrop> = ({ title, products }) => {
 						slidesPerView: 2,
 					},
 					430: {
+						width: 380,
+						slidesPerView: 2,
+					},
+					412: {
 						width: 380,
 						slidesPerView: 2,
 					},
