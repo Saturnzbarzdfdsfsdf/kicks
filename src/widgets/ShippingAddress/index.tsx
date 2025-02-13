@@ -1,14 +1,17 @@
-import React from 'react'
-
-import { selectCartItems } from 'src/features/cart/model/selectors'
-import { useAppSelector } from 'src/app/Hook'
-import { CartContentOrder } from 'src/features/cart/components'
-
-import styles from './index.module.scss'
 import { Link } from 'react-router-dom'
 
+import { useAppDispatch } from 'src/app/Hook'
+import { CartContentOrder } from 'src/features/cart/components'
+import { clearCart } from 'src/features/cart/model/cartSlice'
+
+import styles from './index.module.scss'
+
 const index = () => {
-	const cartItems = useAppSelector(selectCartItems)
+	const dispatch = useAppDispatch()
+
+	const handleClearCart = () => {
+		dispatch(clearCart())
+	}
 
 	return (
 		<div className={styles.container}>
@@ -110,12 +113,12 @@ const index = () => {
 
 						<Link to='thanks'>
 							<input
+								onClick={handleClearCart}
 								type='submit'
 								value='place an order'
 								className={styles.submit}
 							/>
 						</Link>
-						
 					</fieldset>
 				</div>
 

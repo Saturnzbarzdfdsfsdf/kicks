@@ -12,6 +12,7 @@ export interface IProducts {
 
 export interface ICartItem extends IProducts {
 	quantity: number
+	// selectedSize: number
 }
 
 interface CartState {

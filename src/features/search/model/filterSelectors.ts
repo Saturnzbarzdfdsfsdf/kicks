@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { selectProducts } from 'src/entities/Product/model/selectors'
 import type { RootState } from 'src/app/store'
+import type { IProducts } from 'src/features/cart/model/cartSlice'
 
 export const selectSelectedCategories = (state: RootState) =>
 	state.filter.selectedCategories
@@ -11,6 +12,17 @@ export const selectPriceRange = (state: RootState) => state.filter.priceRange
 
 export const selectSelectedSizes = (state: RootState) =>
 	state.filter.selectedSizes
+
+export const selectGroupedTitles = createSelector(
+	[selectProducts],
+	(products: IProducts[]) => {
+		const titles = new Set<string>() // Используем Set для уникальности
+		products.forEach(product => {
+			titles.add(product.title)
+		})
+		return Array.from(titles) // Преобразуем Set в массив
+	}
+)
 
 export const selectFilteredProducts = createSelector(
 	[

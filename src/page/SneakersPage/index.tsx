@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from 'src/app/Hook'
 
 import {
   selectCurrentPage,
+  selectProducts,
   selectProductsLoading,
   selectTotalPages,
 } from 'src/entities/Product/model/selectors'
@@ -25,8 +26,9 @@ const Index = () => {
 
   // Получаем отфильтрованные продукты через селектор
   const filteredProducts = useAppSelector(selectFilteredProducts)
+  const products = useAppSelector(selectProducts)
 
- 
+
   const [localPage, setLocalPage] = useState(1)
 
   useEffect(() => {
@@ -45,32 +47,30 @@ const Index = () => {
   }
 
   return (
-    <section className={styles.new}>
-      <Discount />
-      <div className={styles.bottom}>
-        <aside className={styles.sideBar}>
-          <div className={styles.sideBar__top}>
-            <h3 className={styles.sideBar__title}>Life Style Shoes</h3>
-            <p className={styles.sideBar__items}>
-              {filteredProducts.length} items
-            </p>
-          </div>
-          <SideBar />
-        </aside>
-        <div className={styles.grid}>
-          {filteredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-      <div className={styles.pagination}></div>
-    </section>
-  )
+		<section className={styles.new}>
+			<Discount />
+			<div className={styles.bottom}>
+				<aside className={styles.sideBar}>
+					<div className={styles.sideBar__top}>
+						<h3 className={styles.sideBar__title}>Life Style Shoes</h3>
+						<p className={styles.sideBar__items}>{products.length} items</p>
+					</div>
+					<SideBar />
+				</aside>
+				<div className={styles.grid}>
+					{filteredProducts.map(product => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
+			</div>
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				onPageChange={handlePageChange}
+			/>
+			<div className={styles.pagination}></div>
+		</section>
+	)
 }
 
 export default Index
